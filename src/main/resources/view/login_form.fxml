@@ -23,27 +23,40 @@
             <Image url="@../asserts/logo/Gym_GenIUS-removebg-preview.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="302.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome GYM Genius" wrappingWidth="172.13671875">
+      <Text fill="WHITE" layoutX="270.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to GYM Genius" wrappingWidth="181.09572601318382">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <TextField layoutX="254.0" layoutY="131.0" prefHeight="40.0" prefWidth="258.0" promptText="Username" style="-fx-background-color: #636e72;" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="204.0" layoutY="132.0">
+      <TextField layoutX="254.0" layoutY="131.0" prefHeight="20.0" prefWidth="258.0" promptText="Username" style="-fx-background-color: #636e72; -fx-background-radius: 10;" styleClass="loginbtn" stylesheets="@../values/style.css">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font></TextField>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="219.0" layoutY="124.0">
          <image>
-            <Image url="@../asserts/icons/user%20icon%20transparent.png" />
+            <Image url="@../asserts/icons/user_icon_transparent.png" />
          </image>
       </ImageView>
-      <PasswordField layoutX="254.0" layoutY="188.0" prefHeight="40.0" prefWidth="258.0" promptText="Password" style="-fx-background-color: #636e72;" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="204.0" layoutY="188.0">
-         <image>
-            <Image url="@../asserts/icons/Password_icon%20transparent.png" />
-         </image>
-      </ImageView>
-      <JFXButton layoutX="303.0" layoutY="255.0" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: D0FD1D;" text="LOGIN">
+      <PasswordField layoutX="254.0" layoutY="188.0" prefHeight="20.0" prefWidth="258.0" promptText="Password" style="-fx-background-color: #636e72; -fx-background-radius: 10;" />
+      <JFXButton fx:id="loginbtn" buttonType="RAISED" layoutX="337.0" layoutY="319.0" prefHeight="30.0" prefWidth="83.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 20;" styleClass="loginbtn" stylesheets="@../values/style.css" text="LOGIN" textFill="#0a0a0a">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="219.0" layoutY="181.0">
+         <image>
+            <Image url="@../asserts/icons/Password_icon_transparent.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="413.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create account?" wrappingWidth="79.39714050292969">
+         <font>
+            <Font name="Arial" size="10.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="247.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?">
+         <font>
+            <Font name="Arial" size="10.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
