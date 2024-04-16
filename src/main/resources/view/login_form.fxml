@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="735.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="737.0" fitWidth="1100.0">
+         <image>
+            <Image url="@../asserts/images/LoginPageBackground.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="737.0" layoutX="514.0" layoutY="-1.0" opacity="0.81" stroke="BLACK" strokeType="INSIDE" width="587.0" />
+      <Label id="lblwelcome" fx:id="lblwelcome" alignment="CENTER" layoutX="589.0" layoutY="23.0" prefHeight="46.0" prefWidth="438.0" styleClass="lblwelcome" stylesheets="@../values/style.css" text="Welcome to GYM genius" textFill="#f8f8f8" underline="true">
+         <font>
+            <Font name="Arial Bold" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="192.0" fitWidth="200.0" layoutX="14.0">
+         <image>
+            <Image url="@../asserts/logo/GymGenius_LOGO.png" />
+         </image>
+      </ImageView>
+      <TextField id="txtusername" layoutX="664.0" layoutY="316.0" prefHeight="46.0" prefWidth="338.0" promptText="Username" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30;" styleClass="txtusername" stylesheets="@../values/style.css" />
+      <ImageView fitHeight="62.0" fitWidth="66.0" layoutX="775.0" layoutY="96.0">
+         <image>
+            <Image url="@../asserts/icons/userIcon.png" />
+         </image>
+      </ImageView>
+      <PasswordField id="txtpw" layoutX="664.0" layoutY="406.0" prefHeight="46.0" prefWidth="338.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30;" styleClass="txtpw" stylesheets="@../values/style.css" />
+      <JFXButton id="loginbtn" layoutX="754.0" layoutY="569.0" prefHeight="46.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-background-color: D0FD1D;" styleClass="loginbtn" stylesheets="@../values/style.css" text="Login" />
+      <Text accessibleRole="HYPERLINK" fill="WHITE" layoutX="664.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot password?" />
+   </children>
 </AnchorPane>

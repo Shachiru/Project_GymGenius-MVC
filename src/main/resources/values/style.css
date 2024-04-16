@@ -1,14 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+.loginbtn {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+.signin {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.lblwelcome{
+    -fx-text-fill: D0FD1D;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}
+.txtusername{
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+}
+.txtpw{
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+}
