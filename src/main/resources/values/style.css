@@ -12,11 +12,25 @@
     -fx-font-weight: bold;
     -fx-font-size: 24px;
 }
-.txtusername{
+.txtUsername{
     -fx-font-size: 16px;
     -fx-text-fill: black;
 }
-.txtpw{
+.txtPw{
     -fx-font-size: 16px;
     -fx-text-fill: black;
+}
+.lblSince{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.lblUsername{
+    -fx-text-fill: white;
+}
+.lblPassword{
+    -fx-text-fill: white;
+}
+.txtSlogan{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
 }
