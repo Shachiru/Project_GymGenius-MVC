@@ -34,3 +34,7 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
+.txtSignup{
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+}
