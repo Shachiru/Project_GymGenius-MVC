@@ -1,0 +1,40 @@
+.loginbtn {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+.signin {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.lblWelcome{
+    -fx-text-fill: D0FD1D;
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}
+.txtUsername{
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+}
+.txtPw{
+    -fx-font-size: 16px;
+    -fx-text-fill: black;
+}
+.lblSince{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.lblUsername{
+    -fx-text-fill: white;
+}
+.lblPassword{
+    -fx-text-fill: white;
+}
+.txtSlogan{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.txtSignup{
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+}

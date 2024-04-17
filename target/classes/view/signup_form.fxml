@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="634.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.SignUpFormController">
+   <children>
+      <ImageView fitHeight="634.0" fitWidth="470.0">
+         <image>
+            <Image url="@../asserts/images/signupBackground.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d0d0d" height="634.0" opacity="0.86" stroke="BLACK" strokeType="INSIDE" width="470.0" />
+      <ImageView fitHeight="123.0" fitWidth="111.0" layoutX="180.0">
+         <image>
+            <Image url="@../asserts/logo/GymGenius_LOGO.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="185.0" layoutY="483.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Sign Up">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="76.0" layoutY="137.0" text="Username :" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="76.0" layoutY="164.0" prefHeight="46.0" prefWidth="320.0" promptText="Username" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
+      <Label layoutX="76.0" layoutY="242.0" text="Password :" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PasswordField layoutX="75.0" layoutY="271.0" prefHeight="46.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
+      <PasswordField layoutX="76.0" layoutY="377.0" prefHeight="46.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
+      <Label layoutX="75.0" layoutY="347.0" prefHeight="20.0" prefWidth="124.0" text="Confirm Password :" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

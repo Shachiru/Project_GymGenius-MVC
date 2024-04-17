@@ -82,6 +82,6 @@
             </JFXButton>
          </children>
       </Pane>
-      <Pane fx:id="pagingPane" layoutX="300.0" layoutY="1.0" opacity="0.1" prefHeight="780.0" prefWidth="1066.0" style="-fx-background-color: white;" />
+      <Pane fx:id="pagingPane" layoutX="300.0" layoutY="1.0" prefHeight="780.0" prefWidth="1066.0" style="-fx-background-color: black;" />
    </children>
 </AnchorPane>
