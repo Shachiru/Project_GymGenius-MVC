@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,84 +22,63 @@
             <Image url="@../asserts/logo/GymGenius_LOGO.png" />
          </image>
       </ImageView>
-      <Pane layoutX="30.0" layoutY="115.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="75.0" layoutY="184.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Dashboard">
+            <JFXButton buttonType="RAISED" layoutX="1.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-color: gray; -fx-border-radius: 20;" text="Home" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="30.0" layoutY="185.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="75.0" layoutY="251.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Clients">
+            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-color: gray; -fx-border-radius: 20;" text="Members" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="30.0" layoutY="255.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="75.0" layoutY="314.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Employees">
+            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20; -fx-border-color: gray;" text="Employees" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="30.0" layoutY="325.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="75.0" layoutY="380.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Supplements">
+            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-color: gray; -fx-border-radius: 20;" text="Shop" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="30.0" layoutY="395.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="75.0" layoutY="448.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Suppliers">
+            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-color: gray; -fx-border-radius: 20;" text="Salary" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
-            </JFXButton>
-         </children>
-      </Pane>
-      <Pane layoutX="30.0" layoutY="465.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
-         <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Attendance">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </Pane>
-      <Pane layoutX="30.0" layoutY="535.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
-         <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Payments">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </Pane>
-      <Pane layoutX="30.0" layoutY="605.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
-         <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Salary">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </Pane>
-      <Pane layoutX="30.0" layoutY="675.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
-         <children>
-            <JFXButton buttonType="RAISED" prefHeight="52.0" prefWidth="240.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Schedule">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
          </children>
       </Pane>
