@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
-<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1066.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1066.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="140.0" fill="#d0fd1d" layoutX="-40.0" layoutY="40.0" rotate="90.0" startX="73.0" stroke="#d0fd1d" strokeWidth="3.0" />
+      <Text fill="WHITE" layoutX="75.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome back">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#d0fd1d" layoutX="91.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" wrappingWidth="47.83984375" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#373939" height="707.0" layoutY="76.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.5" width="1066.0" />
+   </children>
+</Pane>
