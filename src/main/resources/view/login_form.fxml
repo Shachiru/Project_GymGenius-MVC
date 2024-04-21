@@ -38,7 +38,7 @@
             <Image url="@../asserts/icons/userIcon.png" />
          </image>
       </ImageView>
-      <JFXButton id="loginbtn" buttonType="RAISED" layoutX="833.0" layoutY="558.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-background-color: D0FD1D;" styleClass="loginbtn" stylesheets="@../values/style.css" text="Login">
+      <JFXButton id="loginbtn" fx:id="btnLogin" buttonType="RAISED" layoutX="833.0" layoutY="558.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-background-color: D0FD1D;" styleClass="loginbtn" stylesheets="@../values/style.css" text="Login">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>

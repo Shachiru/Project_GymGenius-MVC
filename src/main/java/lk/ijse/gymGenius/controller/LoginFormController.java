@@ -76,7 +76,7 @@ public class LoginFormController {
     }
 
     private void navigateToGlobalForm() throws IOException {
-        FXMLLoader.load(this.getClass().getResource("/view/global_form.fxml"));
+        FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
 
         Scene scene = new Scene(rootNode);
         Stage primaryStage = (Stage) this.rootNode.getScene().getWindow();
