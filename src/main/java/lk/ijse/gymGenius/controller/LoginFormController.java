@@ -1,22 +1,27 @@
 package lk.ijse.gymGenius.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import lk.ijse.gymGenius.db.DbConnection;
+import lk.ijse.gymGenius.model.UserModel;
+import lk.ijse.gymGenius.util.Navigation;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class LoginFormController {
+
+    @FXML
+    private JFXButton btnLogin;
+
+    @FXML
+    private Hyperlink hyperSignUp;
 
     @FXML
     private Label lblPassword;
@@ -37,64 +42,30 @@ public class LoginFormController {
     private TextField txtSlogan;
 
     @FXML
-    private TextField txtUserId;
+    private TextField txtUserName;
 
     @FXML
-    private Hyperlink hyperSignUp;
+    private ImageView imgPower;
+
+    @FXML
+    void btnPower(MouseEvent event) {
+        System.exit(1);
+    }
 
     @FXML
     void btnLoginOnAction(ActionEvent event) {
-        String userId = txtUserId.getText();
-        String pw = txtPw.getText();
-        try{
-            checkCredential(userId,pw);
-        } catch (SQLException e){
-            new Alert(Alert.AlertType.ERROR,"Try Again").show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void checkCredential(String userId, String pw) throws SQLException, IOException {
-        String sql = "Select user_id,password from user where user_id=?";
-        Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setObject(1,userId);
-
-        ResultSet resultSet = pstm.executeQuery();
-        if(resultSet.next()){
-            String dbPw = resultSet.getString(2);
-
-            if(dbPw.equals(pw)){
-                navigateToGlobalForm();
-            } else {
-                new Alert(Alert.AlertType.ERROR,"Wrong Password!").show();
+        if (UserModel.verifyCredentials(txtUserName.getText(), txtPw.getText())){
+            try {
+                Navigation.switchNavigation("dashboard_form.fxml",event);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
-        } else {
-            new Alert(Alert.AlertType.ERROR,"User Id not found!").show();
         }
     }
-
-    private void navigateToGlobalForm() throws IOException {
-        FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
-
-        Scene scene = new Scene(rootNode);
-        Stage primaryStage = (Stage) this.rootNode.getScene().getWindow();
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        primaryStage.setTitle("Dashboard Form");
-    }
-
-
 
     @FXML
-    void linkSignUpOnAction(ActionEvent event) throws IOException {
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/signup_form.fxml"));
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Sign Up Form");
-        stage.show();
+    void linkSignUpOnAction(ActionEvent event) {
+
     }
 
 }

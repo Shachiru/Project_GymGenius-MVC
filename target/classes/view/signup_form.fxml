@@ -23,7 +23,7 @@
             <Image url="@../asserts/logo/GymGenius_LOGO.png" />
          </image>
       </ImageView>
-      <JFXButton buttonType="RAISED" layoutX="185.0" layoutY="483.0" onAction="#btnSignUpOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Sign Up">
+      <JFXButton fx:id="btnSignUp" buttonType="RAISED" layoutX="185.0" layoutY="483.0" onAction="#btnSignUpOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: D0FD1D; -fx-background-radius: 30;" text="Sign Up">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -51,7 +51,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="59.0" layoutY="562.0">
+      <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="59.0" layoutY="562.0">
          <image>
             <Image url="@../asserts/icons/backIcon.png" />
          </image>

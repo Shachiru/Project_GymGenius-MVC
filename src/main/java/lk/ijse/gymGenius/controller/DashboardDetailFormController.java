@@ -3,7 +3,7 @@ package lk.ijse.gymGenius.controller;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Pane;
 
-public class MemberFormController {
+public class DashboardDetailFormController {
 
     @FXML
     private Pane pagingPane;

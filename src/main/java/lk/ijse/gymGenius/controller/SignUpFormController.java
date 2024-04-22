@@ -3,14 +3,9 @@ package lk.ijse.gymGenius.controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class SignUpFormController {
 
@@ -18,7 +13,10 @@ public class SignUpFormController {
     private JFXButton btnBack;
 
     @FXML
-    private AnchorPane rootSignUp;
+    private JFXButton btnSignUp;
+
+    @FXML
+    private AnchorPane rootNode;
 
     @FXML
     private PasswordField txtConfirmPw;
@@ -30,17 +28,13 @@ public class SignUpFormController {
     private TextField txtUsername;
 
     @FXML
-    void btnBackOnAction(ActionEvent event) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
-        Stage stage = (Stage) btnBack.getScene().getWindow();
+    void btnBackOnAction(ActionEvent event) {
 
-        stage.setScene(new Scene(anchorPane));
-        stage.setTitle("Login Form");
-        stage.centerOnScreen();
     }
 
     @FXML
     void btnSignUpOnAction(ActionEvent event) {
 
     }
+
 }

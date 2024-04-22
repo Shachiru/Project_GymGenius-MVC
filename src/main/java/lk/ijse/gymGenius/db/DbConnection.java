@@ -12,7 +12,7 @@ public class DbConnection {
         connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/gym_genius",
                 "root",
-                "Srw@003"
+                "Srw@2003"
         );
     }
     public static DbConnection getInstance()throws SQLException{
