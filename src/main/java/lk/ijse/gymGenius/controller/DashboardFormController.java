@@ -55,18 +55,18 @@ public class DashboardFormController implements Initializable {
     }
 
     @FXML
-    void btnSalaryOnAction(ActionEvent event) {
-
+    void btnSalaryOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(pagingPane,"salary_form.fxml");
     }
 
     @FXML
-    void btnShopOnAction(ActionEvent event) {
-
+    void btnShopOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(pagingPane,"shop_form.fxml");
     }
 
     @FXML
-    void btnTrainersOnAction(ActionEvent event) {
-
+    void btnTrainersOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(pagingPane,"trainers_form.fxml");
     }
 
     @Override
