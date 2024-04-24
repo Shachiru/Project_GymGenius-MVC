@@ -65,7 +65,5 @@ public class LoginFormController {
 
     @FXML
     void linkSignUpOnAction(ActionEvent event) {
-
     }
-
 }
