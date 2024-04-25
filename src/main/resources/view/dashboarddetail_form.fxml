@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #3e4043;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardDetailFormController" />
+<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #636e72; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardDetailFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d3436" height="790.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1176.0" />
+      <Pane layoutX="160.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+         <children>
+            <Text layoutX="26.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members Count" wrappingWidth="131.13671875">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="500.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+         <children>
+            <Text layoutX="33.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trainers Count" wrappingWidth="118.13671875">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="840.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+         <children>
+            <Text layoutX="21.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplements QTY" wrappingWidth="142.13671875">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="42.0" layoutY="314.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+         <children>
+            <PieChart prefHeight="500.0" prefWidth="500.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="615.0" layoutY="314.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+         <children>
+            <BarChart prefHeight="500.0" prefWidth="500.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </Pane>
+   </children>
+</Pane>

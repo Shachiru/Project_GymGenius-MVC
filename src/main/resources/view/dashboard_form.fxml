@@ -16,7 +16,7 @@
             <Image url="@../asserts/images/Dashboard_background.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3e4043" height="889.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#15181b" height="889.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="75.0">
          <image>
             <Image url="@../asserts/logo/GymGenius_LOGO.png" />
@@ -107,7 +107,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="pagingPane" layoutX="300.0" layoutY="1.0" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: black;" />
+      <Pane fx:id="pagingPane" layoutX="300.0" layoutY="1.0" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #636e72;" />
       <JFXButton fx:id="btnLogout" alignment="CENTER" buttonType="RAISED" layoutX="103.0" layoutY="823.0" onAction="#btnLogoutOnAction" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 20;" text="      Log Out">
          <font>
             <Font name="System Bold" size="12.0" />
