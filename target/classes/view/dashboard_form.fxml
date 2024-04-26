@@ -58,7 +58,7 @@
       </Pane>
       <Pane layoutX="75.0" layoutY="314.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnTrainers" buttonType="RAISED" onAction="#btnTrainersOnAction" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="     Trainers" textFill="#d0fd1d">
+            <JFXButton fx:id="btnEmp" buttonType="RAISED" onAction="#btnEmpOnAction" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="     Employees" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

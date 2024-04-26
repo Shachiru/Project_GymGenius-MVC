@@ -11,10 +11,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #636e72;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.MemberFormController">
+<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #636e72;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.EmployeeFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d3436" height="790.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1176.0" />
-      <Text fill="WHITE" layoutX="45.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members Manage">
+      <Text fill="WHITE" layoutX="45.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Manage">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -22,7 +22,9 @@
       <TextField layoutX="51.0" layoutY="195.0" prefHeight="45.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
       <TextField layoutX="51.0" layoutY="295.0" prefHeight="45.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
       <TextField layoutX="51.0" layoutY="395.0" prefHeight="45.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <Text fill="#d0fd1d" layoutX="51.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member ID">
+      <TextField layoutX="588.0" layoutY="195.0" prefHeight="45.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <TextField layoutX="588.0" layoutY="295.0" prefHeight="45.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <Text fill="#d0fd1d" layoutX="51.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -37,27 +39,25 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
+      <Text fill="#d0fd1d" layoutX="597.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile No">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#d0fd1d" layoutX="597.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
       <TableView layoutX="88.0" layoutY="472.0" prefHeight="404.0" prefWidth="1000.0">
         <columns>
           <TableColumn prefWidth="150.0" text="ID" />
           <TableColumn prefWidth="200.0" text="Name" />
-            <TableColumn prefWidth="250.0" text="Address" />
-            <TableColumn prefWidth="175.0" text="Mobile number" />
-            <TableColumn prefWidth="225.0" text="Date of birth" />
+            <TableColumn minWidth="0.0" prefWidth="250.0" text="Address" />
+            <TableColumn minWidth="0.0" prefWidth="200.0" text="Mobile No" />
+            <TableColumn minWidth="0.0" prefWidth="200.0" text="Role" />
         </columns>
       </TableView>
-      <TextField layoutX="588.0" layoutY="195.0" prefHeight="45.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <TextField layoutX="588.0" layoutY="295.0" prefHeight="45.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <Text fill="#d0fd1d" layoutX="588.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile No">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Text>
-      <Text fill="#d0fd1d" layoutX="588.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Text>
       <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="530.0" layoutY="395.0" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 20;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
