@@ -33,33 +33,36 @@ Amount Decimal(10,2),
 FOREIGN KEY (EmpID) REFERENCES Employee(ID)on update cascade on delete cascade
 );
 
-create table Client(
+create table Member(
 ID varchar(10)primary key,
 Name varchar(30),
-Address varchar(30)
+Address varchar(30),
+Mobile varchar(10),
+DOB date,
+Gender varchar(10)
 );
 
 create table Schedule(
-c_id varchar(10),
+m_id varchar(10),
 emp_id varchar(10),
 Level varchar(30),
 Time time,
 FOREIGN KEY (emp_id) REFERENCES Employee(ID)on update cascade on delete cascade,
-FOREIGN KEY (c_id) REFERENCES Client(ID)on update cascade on delete cascade
+FOREIGN KEY (m_id) REFERENCES Member(ID)on update cascade on delete cascade
 );
 
 create table C_attendance(
-c_id varchar(10),
+m_id varchar(10),
 Date date,
-FOREIGN KEY (c_id) REFERENCES Client(ID)on update cascade on delete cascade
+FOREIGN KEY (m_id) REFERENCES Member(ID)on update cascade on delete cascade
 );
 
 create table Payment(
 Id int primary key,
-c_id varchar(10),
+m_id varchar(10),
 Date date,
 Amount decimal(10,2),
-FOREIGN KEY (c_id) REFERENCES Client(ID)on update cascade on delete cascade
+FOREIGN KEY (m_id) REFERENCES Member(ID)on update cascade on delete cascade
 );
 
 create table Supplier(
@@ -83,11 +86,11 @@ FOREIGN KEY (supplier_id) REFERENCES Supplier(ID)on update cascade on delete cas
 );
 
 create table supplements_dateils(
-c_id varchar(10),
+m_id varchar(10),
 supplement_id varchar(10),
 qty int,
 Date date,
-FOREIGN KEY (c_id) REFERENCES Client(ID)on update cascade on delete cascade,
+FOREIGN KEY (m_id) REFERENCES Member(ID)on update cascade on delete cascade,
 FOREIGN KEY (supplement_id) REFERENCES Supplements(ID)on update cascade on delete cascade
 );
 
