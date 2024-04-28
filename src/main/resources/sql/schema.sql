@@ -14,6 +14,7 @@ create table Employee(
 ID varchar(10)primary key,
 EmpName varchar(30)not null,
 Address varchar(30)not null,
+Mobile varchar(10),
 EmpRole varchar(50)not null,
 UserID varchar(10),
 FOREIGN KEY (UserID) REFERENCES User(ID)on update cascade on delete cascade

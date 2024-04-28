@@ -186,12 +186,13 @@ public class MemberFormController  implements Initializable{
         try{
             txtMemberId.setText(memberRepo.generateNextId());
         }catch (SQLException e){
-            throw new RuntimeException(e)   ;
+            throw new RuntimeException(e);
         }
         setCellValueFactory();
         loadMemberTable();
         this.memberList = getAllMember();
     }
+
     public void tableClick(MouseEvent mouseEvent) {
         TablePosition pos = tblMember.getSelectionModel().getSelectedCells().get(0);
         int row = pos.getRow();
