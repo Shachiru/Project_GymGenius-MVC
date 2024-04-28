@@ -39,8 +39,8 @@
       </Text>
       <TableView fx:id="tblMember" layoutX="88.0" layoutY="472.0" prefHeight="404.0" prefWidth="931.0">
         <columns>
-          <TableColumn fx:id="colMemberId" prefWidth="58.0" text="ID" />
-          <TableColumn fx:id="colMemberName" prefWidth="208.0" text="Name" />
+          <TableColumn fx:id="colMemberId" prefWidth="81.0" text="ID" />
+          <TableColumn fx:id="colMemberName" prefWidth="185.0" text="Name" />
             <TableColumn fx:id="colMemberAddress" prefWidth="197.0" text="Address" />
             <TableColumn fx:id="colMemberMobile" prefWidth="164.0" text="Mobile number" />
             <TableColumn fx:id="colMemberDOB" prefWidth="152.0" text="Date of birth" />

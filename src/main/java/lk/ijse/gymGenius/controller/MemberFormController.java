@@ -71,12 +71,31 @@ public class MemberFormController  implements Initializable{
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
+        clearFields();
+    }
 
+    private void clearFields() {
+        txtMemberId.setText("");
+        txtName.setText("");
+        txtAddress.setText("");
+        txtMobileNo.setText("");
+        txtDOB.setText("");
+        txtGender.setText("");
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        String id = txtMemberId.getText();
+        MemberRepo memberRepo = new MemberRepo();
 
+        try{
+           boolean isDeleted = MemberRepo.deleteMember(id);
+           if (isDeleted){
+               new Alert(Alert.AlertType.CONFIRMATION,"Member deleted").show();
+           }
+        }catch (SQLException e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     @FXML
@@ -88,7 +107,7 @@ public class MemberFormController  implements Initializable{
         String dob = txtDOB.getText();
         String gender = txtGender.getText();
 
-        Member member = new Member(id, name, address, mobile, dob, gender);
+        Member member = new Member(id,name,address,mobile,dob,gender);
 
         try {
             boolean isSaved = MemberRepo.saveMember(member);
@@ -142,7 +161,23 @@ public class MemberFormController  implements Initializable{
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        String id = txtMemberId.getText();
+        String name = txtName.getText();
+        String address = txtAddress.getText();
+        String mobile = txtMobileNo.getText();
+        String dob = txtDOB.getText();
+        String gender = txtGender.getText();
 
+        Member member = new Member(id, name, address, mobile, dob, gender);
+
+        try {
+            boolean isUpdated = MemberRepo.updateMember(member);
+            if (isUpdated){
+                new Alert(Alert.AlertType.CONFIRMATION,"Member updated").show();
+            }
+        }catch (SQLException e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        }
     }
 
     @Override

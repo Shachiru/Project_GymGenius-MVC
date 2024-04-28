@@ -1,5 +1,6 @@
 package lk.ijse.gymGenius.repository;
 
+import com.mysql.cj.xdevapi.UpdateStatement;
 import lk.ijse.gymGenius.db.DbConnection;
 import lk.ijse.gymGenius.model.Member;
 
@@ -24,16 +25,6 @@ public class MemberRepo {
         return splitId(null);
     }
 
-    private String splitId(String id) {
-        if(id != null){
-            String [] split = id.split("M");
-            int memberId = Integer.parseInt(split[1]);
-            memberId++;
-            return "M"+memberId;
-        }
-        return "M1";
-    }
-
     public static boolean saveMember(Member member) throws SQLException {
         String sql = "INSERT INTO Member VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -46,6 +37,37 @@ public class MemberRepo {
         pstm.setObject(6, member.getGender());
 
         return pstm.executeUpdate() > 0;
+    }
+
+    public static boolean updateMember(Member member) throws SQLException {
+        String sql = "Update Member set name=?, address=?, mobile=?, dob=?, gender=? where id=?";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setObject(1, member.getName());
+        pstm.setObject(2, member.getAddress());
+        pstm.setObject(3, member.getMobile());
+        pstm.setObject(4, member.getDob());
+        pstm.setObject(5, member.getGender());
+        pstm.setObject(6, member.getId());
+
+        return pstm.executeUpdate() > 0;
+    }
+
+    public static boolean deleteMember(String id) throws SQLException {
+        String sql = "Select * from Member where id = ?";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+        pstm.setObject(1, id);
+        return pstm.executeUpdate() > 0;
+    }
+
+    private String splitId(String id) {
+        if(id != null){
+            String [] split = id.split("M");
+            int memberId = Integer.parseInt(split[1]);
+            memberId++;
+            return "M"+memberId;
+        }
+        return "M1";
     }
 
     public static List<Member> getMember() throws SQLException {
