@@ -14,7 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.gymGenius.model.UserModel;
+import lk.ijse.gymGenius.repository.UserRepo;
 import lk.ijse.gymGenius.util.Navigation;
 
 import java.io.IOException;
@@ -58,7 +58,7 @@ public class LoginFormController {
 
     @FXML
     void btnLoginOnAction(ActionEvent event) {
-        if (UserModel.verifyCredentials(txtUserName.getText(), txtPw.getText())){
+        if (UserRepo.verifyCredentials(txtUserName.getText(), txtPw.getText())){
             try {
                 Navigation.switchNavigation("dashboard_form.fxml",event);
             } catch (IOException e) {

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberRepo {
-    public static String generateNextId() throws SQLException {
+    public String generateNextId() throws SQLException {
         String sql = "Select ID from Member order by ID desc limit 1";
         Connection connection = DbConnection.getInstance().getConnection();
         ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
@@ -24,7 +24,7 @@ public class MemberRepo {
         return splitId(null);
     }
 
-    private static String splitId(String id) {
+    private String splitId(String id) {
         if(id != null){
             String [] split = id.split("M");
             int memberId = Integer.parseInt(split[1]);

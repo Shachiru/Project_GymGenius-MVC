@@ -65,6 +65,8 @@ public class MemberFormController  implements Initializable{
     @FXML
     private TextField txtName;
 
+    MemberRepo memberRepo = new MemberRepo();
+
     private List<Member> memberList = new ArrayList<>();
 
     @FXML
@@ -146,7 +148,7 @@ public class MemberFormController  implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
-            txtMemberId.setText(MemberRepo.generateNextId());
+            txtMemberId.setText(memberRepo.generateNextId());
 
         }catch (SQLException e){
             throw new RuntimeException(e)   ;

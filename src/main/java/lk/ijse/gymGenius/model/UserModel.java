@@ -1,3 +1,4 @@
+/*
 package lk.ijse.gymGenius.model;
 
 import lk.ijse.gymGenius.db.DbConnection;
@@ -31,3 +32,4 @@ public class UserModel {
         return false;
     }
 }
+*/

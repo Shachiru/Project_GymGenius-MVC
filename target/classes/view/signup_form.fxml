@@ -28,28 +28,28 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
-      <Label layoutX="76.0" layoutY="137.0" text="Username :" textFill="WHITE">
+      <Label layoutX="76.0" layoutY="258.0" text="Username :" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtUsername" layoutX="76.0" layoutY="164.0" prefHeight="46.0" prefWidth="320.0" promptText="Username" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
-      <Label layoutX="76.0" layoutY="242.0" text="Password :" textFill="WHITE">
+      <TextField fx:id="txtUsername" layoutX="76.0" layoutY="294.0" prefHeight="46.0" prefWidth="320.0" promptText="Username" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
+      <Label layoutX="78.0" layoutY="357.0" text="Password :" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <PasswordField fx:id="txtPw" layoutX="75.0" layoutY="271.0" prefHeight="46.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
-      <PasswordField fx:id="txtConfirmPw" layoutX="76.0" layoutY="377.0" prefHeight="46.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
-      <Label layoutX="75.0" layoutY="347.0" prefHeight="20.0" prefWidth="124.0" text="Confirm Password :" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
+      <PasswordField fx:id="txtPw" layoutX="76.0" layoutY="392.0" prefHeight="46.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
       <ImageView fitHeight="15.0" fitWidth="15.0" layoutX="59.0" layoutY="562.0">
          <image>
             <Image url="@../asserts/icons/backIcon.png" />
          </image>
       </ImageView>
+      <TextField fx:id="txtUserId" layoutX="76.0" layoutY="202.0" prefHeight="46.0" prefWidth="320.0" promptText="UserId" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;" />
+      <Label layoutX="76.0" layoutY="165.0" text="UserId" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
