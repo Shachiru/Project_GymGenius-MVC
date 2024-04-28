@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -8,9 +9,39 @@
 <Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #636e72; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.ShopFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d3436" height="790.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1176.0" />
-      <Text fill="WHITE" layoutX="45.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop Manage">
+      <Text fill="WHITE" layoutX="45.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplement Manage">
          <font>
             <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#d0fd1d" layoutX="51.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplement Id">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField layoutX="51.0" layoutY="195.0" prefHeight="40.0" prefWidth="334.0" style="-fx-background-radius: 20;" />
+      <TextField layoutX="51.0" layoutY="284.0" prefHeight="40.0" prefWidth="334.0" style="-fx-background-radius: 20;" />
+      <TextField layoutX="51.0" layoutY="362.0" prefHeight="40.0" prefWidth="334.0" style="-fx-background-radius: 20;" />
+      <Text fill="#d0fd1d" layoutX="51.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brand Name">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField layoutX="642.0" layoutY="195.0" prefHeight="40.0" prefWidth="334.0" style="-fx-background-radius: 20;" />
+      <TextField layoutX="642.0" layoutY="284.0" prefHeight="40.0" prefWidth="334.0" style="-fx-background-radius: 20;" />
+      <Text fill="#d0fd1d" layoutX="51.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#d0fd1d" layoutX="642.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#d0fd1d" layoutX="642.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Id">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
       </Text>
    </children>

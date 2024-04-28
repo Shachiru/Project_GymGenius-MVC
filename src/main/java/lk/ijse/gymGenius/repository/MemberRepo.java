@@ -1,10 +1,14 @@
 package lk.ijse.gymGenius.repository;
 
 import lk.ijse.gymGenius.db.DbConnection;
+import lk.ijse.gymGenius.model.Member;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MemberRepo {
     public static String generateNextId() throws SQLException {
@@ -28,5 +32,43 @@ public class MemberRepo {
             return "M"+memberId;
         }
         return "M1";
+    }
+
+    public static boolean saveMember(Member member) throws SQLException {
+        String sql = "INSERT INTO Member VALUES (?, ?, ?, ?, ?, ?)";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setObject(1, member.getId());
+        pstm.setObject(2, member.getName());
+        pstm.setObject(3, member.getAddress());
+        pstm.setObject(4, member.getMobile());
+        pstm.setObject(5, member.getDob());
+        pstm.setObject(6, member.getGender());
+
+        return pstm.executeUpdate() > 0;
+    }
+
+    public static List<Member> getMember() throws SQLException {
+        String sql = "SELECT * FROM Member";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<Member> memberList = new ArrayList<>();
+        while (resultSet.next()) {
+            String id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String address = resultSet.getString(3);
+            String mobile = resultSet.getString(4);
+            String dob = resultSet.getString(5);
+            String gender = resultSet.getString(6);
+
+            Member member = new Member(id, name, address, mobile, dob, gender);
+            memberList.add(member);
+        }
+
+        return memberList;
     }
 }

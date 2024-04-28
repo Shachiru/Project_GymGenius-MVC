@@ -85,7 +85,7 @@ FOREIGN KEY (supplement_id) REFERENCES Supplements(ID)on update cascade on delet
 FOREIGN KEY (supplier_id) REFERENCES Supplier(ID)on update cascade on delete cascade
 );
 
-create table supplements_dateils(
+create table supplements_details(
 m_id varchar(10),
 supplement_id varchar(10),
 qty int,
