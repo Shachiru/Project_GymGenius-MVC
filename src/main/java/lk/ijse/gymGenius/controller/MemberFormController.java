@@ -5,11 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.Member;
 import lk.ijse.gymGenius.repository.MemberRepo;
@@ -89,9 +87,10 @@ public class MemberFormController  implements Initializable{
         MemberRepo memberRepo = new MemberRepo();
 
         try{
-           boolean isDeleted = MemberRepo.deleteMember(id);
+           boolean isDeleted = memberRepo.deleteMember(id);
            if (isDeleted){
                new Alert(Alert.AlertType.CONFIRMATION,"Member deleted").show();
+               loadMemberTable();
            }
         }catch (SQLException e){
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -113,6 +112,7 @@ public class MemberFormController  implements Initializable{
             boolean isSaved = MemberRepo.saveMember(member);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.CONFIRMATION,"Member saved").show();
+            loadMemberTable();
         }
     }
     private void setCellValueFactory() {
@@ -174,6 +174,7 @@ public class MemberFormController  implements Initializable{
             boolean isUpdated = MemberRepo.updateMember(member);
             if (isUpdated){
                 new Alert(Alert.AlertType.CONFIRMATION,"Member updated").show();
+                loadMemberTable();
             }
         }catch (SQLException e){
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
@@ -184,12 +185,24 @@ public class MemberFormController  implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
             txtMemberId.setText(memberRepo.generateNextId());
-
         }catch (SQLException e){
             throw new RuntimeException(e)   ;
         }
         setCellValueFactory();
         loadMemberTable();
         this.memberList = getAllMember();
+    }
+    public void tableClick(MouseEvent mouseEvent) {
+        TablePosition pos = tblMember.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        ObservableList<TableColumn<MemberTm,?> > columns = tblMember.getColumns();
+
+        txtMemberId.setText(columns.get(0).getCellData(row).toString());
+        txtName.setText(columns.get(1).getCellData(row).toString());
+        txtAddress.setText(columns.get(2).getCellData(row).toString());
+        txtMobileNo.setText(columns.get(3).getCellData(row).toString());
+        txtDOB.setText(columns.get(4).getCellData(row).toString());
+        txtGender.setText(columns.get(5).getCellData(row).toString());
+
     }
 }

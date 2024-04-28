@@ -54,7 +54,7 @@ public class MemberRepo {
     }
 
     public static boolean deleteMember(String id) throws SQLException {
-        String sql = "Select * from Member where id = ?";
+        String sql = "DELETE from Member where id = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1, id);
         return pstm.executeUpdate() > 0;
