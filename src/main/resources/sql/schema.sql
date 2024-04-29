@@ -75,6 +75,7 @@ Address varchar(30)
 create table Supplements(
 ID varchar(10)primary key,
 Description varchar(255),
+UnitPrice decimal(10,2),
 Qty int
 );
 

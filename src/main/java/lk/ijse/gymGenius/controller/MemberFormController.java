@@ -193,7 +193,8 @@ public class MemberFormController  implements Initializable{
         this.memberList = getAllMember();
     }
 
-    public void tableClick(MouseEvent mouseEvent) {
+    @FXML
+    void tableClick(MouseEvent mouseEvent) {
         TablePosition pos = tblMember.getSelectionModel().getSelectedCells().get(0);
         int row = pos.getRow();
         ObservableList<TableColumn<MemberTm,?> > columns = tblMember.getColumns();

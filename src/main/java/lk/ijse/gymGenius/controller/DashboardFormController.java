@@ -33,6 +33,9 @@ public class DashboardFormController implements Initializable {
     private JFXButton btnEmp;
 
     @FXML
+    private JFXButton btnSupplement;
+
+    @FXML
     private Pane pagingPane;
 
     @FXML
@@ -67,6 +70,11 @@ public class DashboardFormController implements Initializable {
     @FXML
     void btnEmpOnAction(ActionEvent event) throws IOException {
         Navigation.switchPaging(pagingPane,"employee_form.fxml");
+    }
+
+    @FXML
+    void btnSupplementOnAction(ActionEvent event) throws IOException {
+        Navigation.switchPaging(pagingPane,"supplement_form.fxml");
     }
 
     @Override

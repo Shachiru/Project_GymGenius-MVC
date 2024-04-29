@@ -10,6 +10,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.Employee;
+import lk.ijse.gymGenius.model.User;
 import lk.ijse.gymGenius.repository.EmployeeRepo;
 import lk.ijse.gymGenius.tm.EmployeeTm;
 
@@ -58,6 +59,10 @@ public class EmployeeFormController implements Initializable {
     private TextField txtEmpRole;
 
     EmployeeRepo employeeRepo = new EmployeeRepo();
+
+    SignUpFormController signUpFormController = new SignUpFormController();
+
+    User user = new User();
 
     private List<Employee> employeeList = new ArrayList<>();
 
@@ -153,10 +158,6 @@ public class EmployeeFormController implements Initializable {
         Employee employee = new Employee(id, name, address, mobile, role, userId);
     }
 
-    @FXML
-    void tableClick(MouseEvent event) {
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -178,7 +179,8 @@ public class EmployeeFormController implements Initializable {
         colEmpRole.setCellValueFactory(new PropertyValueFactory<>("empRole"));
     }
 
-    public void empTableClick(MouseEvent mouseEvent) {
+    @FXML
+    void empTableClick(MouseEvent mouseEvent) {
         TablePosition pos = tblEmployee.getSelectionModel().getSelectedCells().get(0);
         int row = pos.getRow();
         ObservableList<TableColumn<EmployeeTm,?>> columns = tblEmployee.getColumns();

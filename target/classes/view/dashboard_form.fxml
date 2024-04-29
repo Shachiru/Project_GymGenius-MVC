@@ -22,9 +22,9 @@
             <Image url="@../asserts/logo/GymGenius_LOGO.png" />
          </image>
       </ImageView>
-      <Pane layoutX="75.0" layoutY="184.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="58.0" layoutY="184.0" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnHome" alignment="CENTER" buttonType="RAISED" onAction="#btnHomeOnAction" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="Home" textFill="#d0fd1d">
+            <JFXButton fx:id="btnHome" alignment="CENTER" buttonType="RAISED" onAction="#btnHomeOnAction" prefHeight="52.0" prefWidth="184.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="Home" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -39,9 +39,9 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="75.0" layoutY="251.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="58.0" layoutY="251.0" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnMembers" buttonType="RAISED" onAction="#btnMembersOnAction" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="      Members" textFill="#d0fd1d">
+            <JFXButton fx:id="btnMembers" buttonType="RAISED" onAction="#btnMembersOnAction" prefHeight="52.0" prefWidth="184.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="      Members" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -56,9 +56,9 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="75.0" layoutY="314.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="58.0" layoutY="315.0" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnEmp" buttonType="RAISED" onAction="#btnEmpOnAction" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="     Employees" textFill="#d0fd1d">
+            <JFXButton fx:id="btnEmp" buttonType="RAISED" onAction="#btnEmpOnAction" prefHeight="52.0" prefWidth="184.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="     Employees" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -73,9 +73,9 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="75.0" layoutY="380.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="58.0" layoutY="380.0" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnShop" buttonType="RAISED" onAction="#btnShopOnAction" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="   Shop" textFill="#d0fd1d">
+            <JFXButton fx:id="btnShop" buttonType="RAISED" onAction="#btnShopOnAction" prefHeight="52.0" prefWidth="184.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="   Shop" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -90,9 +90,9 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="75.0" layoutY="448.0" prefHeight="52.0" prefWidth="150.0" style="-fx-background-radius: 30;">
+      <Pane layoutX="56.0" layoutY="448.0" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnSalary" buttonType="RAISED" onAction="#btnSalaryOnAction" prefHeight="52.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="   Salary" textFill="#d0fd1d">
+            <JFXButton fx:id="btnSalary" buttonType="RAISED" onAction="#btnSalaryOnAction" prefHeight="52.0" prefWidth="184.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="   Salary" textFill="#d0fd1d">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -103,6 +103,23 @@
             <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="12.0">
                <image>
                   <Image url="@../asserts/icons/salaryIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="58.0" layoutY="513.0" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30;">
+         <children>
+            <JFXButton fx:id="btnSupplement" buttonType="RAISED" onAction="#btnSupplementOnAction" prefHeight="52.0" prefWidth="184.0" style="-fx-background-color: black; -fx-background-radius: 30; -fx-border-radius: 20;" text="   Supplement" textFill="#d0fd1d">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="14.0" layoutY="14.0">
+               <image>
+                  <Image url="@../asserts/icons/supplement.png" />
                </image>
             </ImageView>
          </children>

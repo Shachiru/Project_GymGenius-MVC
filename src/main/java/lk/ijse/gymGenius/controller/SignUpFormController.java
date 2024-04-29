@@ -27,7 +27,7 @@ public class SignUpFormController implements Initializable {
     private PasswordField txtPw;
 
     @FXML
-    private TextField txtUserId;
+    public TextField txtUserId;
 
     @FXML
     private TextField txtUsername;

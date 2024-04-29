@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 
 public class MemberTm {
+
     private String id;
     private String name;
     private String address;
