@@ -26,7 +26,7 @@ public class SupplementRepo {
 
     private static String splitId(String id) {
         if (id != null) {
-            String [] split = id.split("Sup");
+            String [] split = id.split("Sup ");
             int supId = Integer.parseInt(split[1]);
             supId++;
             return "Sup " + supId;

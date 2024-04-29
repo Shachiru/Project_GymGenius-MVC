@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberRepo {
-    public String
-    generateNextId() throws SQLException {
+    public String generateNextId() throws SQLException {
         String sql = "Select ID from Member order by ID desc limit 1";
         Connection connection = DbConnection.getInstance().getConnection();
         ResultSet resultSet = connection.prepareStatement(sql).executeQuery();

@@ -15,6 +15,7 @@ import lk.ijse.gymGenius.tm.MemberTm;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -43,13 +44,13 @@ public class MemberFormController  implements Initializable{
     private Pane pagingPane;
 
     @FXML
+    private DatePicker pickerDate;
+
+    @FXML
     private TableView<MemberTm> tblMember;
 
     @FXML
     private TextField txtAddress;
-
-    @FXML
-    private TextField txtDOB;
 
     @FXML
     private TextField txtGender;
@@ -77,7 +78,7 @@ public class MemberFormController  implements Initializable{
         txtName.setText("");
         txtAddress.setText("");
         txtMobileNo.setText("");
-        txtDOB.setText("");
+        pickerDate.setValue(null);
         txtGender.setText("");
     }
 
@@ -103,7 +104,7 @@ public class MemberFormController  implements Initializable{
         String name = txtName.getText();
         String address = txtAddress.getText();
         String mobile = txtMobileNo.getText();
-        String dob = txtDOB.getText();
+        String dob = String.valueOf(pickerDate.getValue());
         String gender = txtGender.getText();
 
         Member member = new Member(id,name,address,mobile,dob,gender);
@@ -165,7 +166,7 @@ public class MemberFormController  implements Initializable{
         String name = txtName.getText();
         String address = txtAddress.getText();
         String mobile = txtMobileNo.getText();
-        String dob = txtDOB.getText();
+        String dob = String.valueOf(pickerDate.getValue());
         String gender = txtGender.getText();
 
         Member member = new Member(id, name, address, mobile, dob, gender);
@@ -203,7 +204,7 @@ public class MemberFormController  implements Initializable{
         txtName.setText(columns.get(1).getCellData(row).toString());
         txtAddress.setText(columns.get(2).getCellData(row).toString());
         txtMobileNo.setText(columns.get(3).getCellData(row).toString());
-        txtDOB.setText(columns.get(4).getCellData(row).toString());
+        pickerDate.setValue(LocalDate.parse(columns.get(4).getCellData(row).toString()));
         txtGender.setText(columns.get(5).getCellData(row).toString());
 
     }

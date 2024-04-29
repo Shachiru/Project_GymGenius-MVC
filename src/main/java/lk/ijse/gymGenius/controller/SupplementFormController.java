@@ -53,7 +53,7 @@ public class SupplementFormController implements Initializable {
 
     SupplementRepo supplementRepo = new SupplementRepo();
 
-    private List<Supplement> supplementList = new ArrayList<Supplement>();
+    private List<Supplement> supplementList = new ArrayList<>();
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
@@ -158,14 +158,13 @@ public class SupplementFormController implements Initializable {
             txtSupplementId.setText(supplementRepo.generateNextId());
         }catch (SQLException e){
             throw new RuntimeException(e);
-    }
+        }
         setCellValueFactory();
         loadSupplementTable();
         this.supplementList = getSupplement();
-}
+    }
 
     private void setCellValueFactory() {
-
         colSupplementId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colProductName.setCellValueFactory(new PropertyValueFactory<>("productName"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
