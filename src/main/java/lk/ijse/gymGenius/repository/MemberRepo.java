@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberRepo {
+
     public String generateNextId() throws SQLException {
         String sql = "Select ID from Member order by ID desc limit 1";
         Connection connection = DbConnection.getInstance().getConnection();
@@ -23,6 +24,39 @@ public class MemberRepo {
             return splitId(id);
         }
         return splitId(null);
+    }
+
+    private String splitId(String id) {
+        if(id != null){
+            String [] split = id.split("M");
+            int memberId = Integer.parseInt(split[1]);
+            memberId++;
+            return "M"+memberId;
+        }
+        return "M1";
+    }
+
+    public static List<Member> getMember() throws SQLException {
+        String sql = "SELECT * FROM Member";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<Member> memberList = new ArrayList<>();
+        while (resultSet.next()) {
+            String id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String address = resultSet.getString(3);
+            String mobile = resultSet.getString(4);
+            String dob = resultSet.getString(5);
+            String gender = resultSet.getString(6);
+
+            Member member = new Member(id, name, address, mobile, dob, gender);
+            memberList.add(member);
+        }
+        return memberList;
     }
 
     public static boolean saveMember(Member member) throws SQLException {
@@ -61,37 +95,4 @@ public class MemberRepo {
         return pstm.executeUpdate() > 0;
     }
 
-    private String splitId(String id) {
-        if(id != null){
-            String [] split = id.split("M");
-            int memberId = Integer.parseInt(split[1]);
-            memberId++;
-            return "M"+memberId;
-        }
-        return "M1";
-    }
-
-    public static List<Member> getMember() throws SQLException {
-        String sql = "SELECT * FROM Member";
-
-        PreparedStatement pstm = DbConnection.getInstance().getConnection()
-                .prepareStatement(sql);
-
-        ResultSet resultSet = pstm.executeQuery();
-
-        List<Member> memberList = new ArrayList<>();
-        while (resultSet.next()) {
-            String id = resultSet.getString(1);
-            String name = resultSet.getString(2);
-            String address = resultSet.getString(3);
-            String mobile = resultSet.getString(4);
-            String dob = resultSet.getString(5);
-            String gender = resultSet.getString(6);
-
-            Member member = new Member(id, name, address, mobile, dob, gender);
-            memberList.add(member);
-        }
-
-        return memberList;
-    }
 }

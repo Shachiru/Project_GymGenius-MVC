@@ -11,41 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepo {
-    public static boolean saveEmployee(Employee employee) throws SQLException {
-        String sql = "INSERT INTO employee VALUES(?,?,?,?,?,?)";
-        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
-
-        pstm.setObject(1, employee.getId());
-        pstm.setObject(2, employee.getName());
-        pstm.setObject(3, employee.getAddress());
-        pstm.setObject(4, employee.getMobile());
-        pstm.setObject(5, employee.getEmpRole());
-        pstm.setObject(6, employee.getUserId());
-
-        return pstm.executeUpdate() > 0;
-    }
-
-    public static List<Employee> getEmployee() throws SQLException {
-        String sql = "SELECT * FROM employee";
-
-        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
-
-        ResultSet resultSet = pstm.executeQuery();
-
-        List<Employee> employeeList = new ArrayList<>();
-        while (resultSet.next()) {
-            String id = resultSet.getString(1);
-            String name = resultSet.getString(2);
-            String address = resultSet.getString(3);
-            String mobile = resultSet.getString(4);
-            String empRole = resultSet.getString(5);
-            String userId = resultSet.getString(6);
-
-            Employee employee = new Employee(id, name, address, mobile, empRole, userId);
-            employeeList.add(employee);
-        }
-        return employeeList;
-    }
 
     public static String generateNextId() throws SQLException {
         String sql = "Select ID from employee order by ID desc limit 1";
@@ -70,6 +35,42 @@ public class EmployeeRepo {
         return "Emp 1";
     }
 
+    public static List<Employee> getEmployee() throws SQLException {
+        String sql = "SELECT * FROM employee";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<Employee> employeeList = new ArrayList<>();
+        while (resultSet.next()) {
+            String id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String address = resultSet.getString(3);
+            String mobile = resultSet.getString(4);
+            String empRole = resultSet.getString(5);
+            String userId = resultSet.getString(6);
+
+            Employee employee = new Employee(id, name, address, mobile, empRole, userId);
+            employeeList.add(employee);
+        }
+        return employeeList;
+    }
+
+    public static boolean saveEmployee(Employee employee) throws SQLException {
+        String sql = "INSERT INTO employee VALUES(?,?,?,?,?,?)";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setObject(1, employee.getId());
+        pstm.setObject(2, employee.getName());
+        pstm.setObject(3, employee.getAddress());
+        pstm.setObject(4, employee.getMobile());
+        pstm.setObject(5, employee.getEmpRole());
+        pstm.setObject(6, employee.getUserId());
+
+        return pstm.executeUpdate() > 0;
+    }
+
     public static boolean updateEmployee(Employee employee) throws SQLException {
         String sql = "UPDATE employee SET EmpName = ?, Address = ?, Mobile = ?, EmpRole = ?, UserID = ? WHERE ID = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
@@ -91,4 +92,5 @@ public class EmployeeRepo {
 
         return pstm.executeUpdate() > 0;
     }
+
 }

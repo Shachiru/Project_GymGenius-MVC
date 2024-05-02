@@ -62,6 +62,51 @@ public class EmployeeFormController implements Initializable {
 
     private List<Employee> employeeList = new ArrayList<>();
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            txtEmpId.setText(employeeRepo.generateNextId());
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        setCellValueFactory();
+        loadEmployeeTable();
+        this.employeeList = getAllEmployee();
+    }
+
+    private List<Employee> getAllEmployee() {
+        List<Employee> employeeList = null;
+
+        try {
+            employeeList = EmployeeRepo.getEmployee();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return employeeList;
+    }
+
+    private void loadEmployeeTable() {
+        EmployeeRepo employeeRepo = new EmployeeRepo();
+        ObservableList<EmployeeTm> tmList = FXCollections.observableArrayList();
+        try{
+            List<Employee> employeeList = employeeRepo.getEmployee();
+            for (Employee employee : employeeList) {
+                EmployeeTm employeeTm = new EmployeeTm(
+                        employee.getId(),
+                        employee.getName(),
+                        employee.getAddress(),
+                        employee.getMobile(),
+                        employee.getEmpRole(),
+                        employee.getUserId()
+                );
+                tmList.add(employeeTm);
+            }
+            tblEmployee.setItems(tmList);
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
+        }
+    }
+
     @FXML
     void btnClearOnAction(ActionEvent event) {
         clearFields();
@@ -111,39 +156,6 @@ public class EmployeeFormController implements Initializable {
         }
     }
 
-    private void loadEmployeeTable() {
-        EmployeeRepo employeeRepo = new EmployeeRepo();
-        ObservableList<EmployeeTm> tmList = FXCollections.observableArrayList();
-        try{
-            List<Employee> employeeList = employeeRepo.getEmployee();
-            for (Employee employee : employeeList) {
-                EmployeeTm employeeTm = new EmployeeTm(
-                        employee.getId(),
-                        employee.getName(),
-                        employee.getAddress(),
-                        employee.getMobile(),
-                        employee.getEmpRole(),
-                        employee.getUserId()
-                );
-                tmList.add(employeeTm);
-            }
-            tblEmployee.setItems(tmList);
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,"Something went wrong").show();
-        }
-    }
-
-    private List<Employee> getAllEmployee() {
-        List<Employee> employeeList = null;
-
-        try {
-            employeeList = EmployeeRepo.getEmployee();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return employeeList;
-    }
-
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
         String id = txtEmpId.getText();
@@ -166,18 +178,6 @@ public class EmployeeFormController implements Initializable {
         }
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            txtEmpId.setText(employeeRepo.generateNextId());
-        }catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        setCellValueFactory();
-        loadEmployeeTable();
-        this.employeeList = getAllEmployee();
-    }
 
     private void setCellValueFactory() {
 

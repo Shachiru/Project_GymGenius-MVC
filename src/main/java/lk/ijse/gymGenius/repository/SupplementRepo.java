@@ -11,8 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SupplementRepo {
+
     public static String generateNextId() throws SQLException {
-        String sql = "Select ID from Supplements order by ID desc limit 1";
+        String sql = "Select ID from supplements order by ID desc limit 1";
         Connection connection = DbConnection.getInstance().getConnection();
         ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
 
@@ -33,20 +34,9 @@ public class SupplementRepo {
         }
         return "Sup 1";
     }
-    public static boolean saveSupplement(Supplement supplement) throws SQLException {
-        String sql = "INSERT INTO Supplements VALUES(?,?,?,?)";
-        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
-
-        pstm.setObject(1, supplement.getId());
-        pstm.setObject(2, supplement.getProductName());
-        pstm.setObject(3, supplement.getUnitPrice());
-        pstm.setObject(4, supplement.getQty());
-
-        return pstm.executeUpdate() > 0;
-    }
 
     public static List<Supplement> getSupplement() throws SQLException {
-        String sql = "SELECT * FROM Supplements";
+        String sql = "SELECT * FROM supplements";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
@@ -65,8 +55,20 @@ public class SupplementRepo {
         return supplementList;
     }
 
+    public static boolean saveSupplement(Supplement supplement) throws SQLException {
+        String sql = "INSERT INTO supplements VALUES(?,?,?,?)";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setObject(1, supplement.getId());
+        pstm.setObject(2, supplement.getProductName());
+        pstm.setObject(3, supplement.getUnitPrice());
+        pstm.setObject(4, supplement.getQty());
+
+        return pstm.executeUpdate() > 0;
+    }
+
     public boolean deleteSupplement(String id) throws SQLException {
-        String sql = "DELETE from Supplements where id = ?";
+        String sql = "DELETE from supplements where ID = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1, id);
 
@@ -74,7 +76,7 @@ public class SupplementRepo {
     }
 
     public boolean updateSupplement(Supplement supplement) throws SQLException {
-        String sql = "UPDATE Supplements SET productName=?, unitPrice=?, qty=? WHERE id=?";
+        String sql = "UPDATE Supplements SET Description=?, UnitPrice=?, Qty=? WHERE ID=?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         pstm.setObject(1, supplement.getProductName());
@@ -84,4 +86,5 @@ public class SupplementRepo {
 
         return pstm.executeUpdate() > 0;
     }
+
 }
