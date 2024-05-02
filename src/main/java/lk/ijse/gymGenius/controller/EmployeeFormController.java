@@ -133,7 +133,7 @@ public class EmployeeFormController implements Initializable {
         }
     }
 
-    private List<Employee> getEmployeeList() {
+    private List<Employee> getAllEmployee() {
         List<Employee> employeeList = null;
 
         try {
@@ -176,7 +176,7 @@ public class EmployeeFormController implements Initializable {
         }
         setCellValueFactory();
         loadEmployeeTable();
-        this.employeeList = getEmployeeList();
+        this.employeeList = getAllEmployee();
     }
 
     private void setCellValueFactory() {
