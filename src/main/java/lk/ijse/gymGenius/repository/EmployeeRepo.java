@@ -12,7 +12,7 @@ import java.util.List;
 
 public class EmployeeRepo {
     public static boolean saveEmployee(Employee employee) throws SQLException {
-        String sql = "INSERT INTO Employee VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO employee VALUES(?,?,?,?,?,?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         pstm.setObject(1, employee.getId());
@@ -26,7 +26,7 @@ public class EmployeeRepo {
     }
 
     public static List<Employee> getEmployee() throws SQLException {
-        String sql = "SELECT * FROM Employee";
+        String sql = "SELECT * FROM employee";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
@@ -48,7 +48,7 @@ public class EmployeeRepo {
     }
 
     public static String generateNextId() throws SQLException {
-        String sql = "Select ID from Employee order by ID desc limit 1";
+        String sql = "Select ID from employee order by ID desc limit 1";
         Connection connection = DbConnection.getInstance().getConnection();
         ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
 
@@ -71,7 +71,7 @@ public class EmployeeRepo {
     }
 
     public static boolean updateEmployee(Employee employee) throws SQLException {
-        String sql = "UPDATE Employee SET name = ?, address = ?, mobile = ?, empRole = ?, userId = ? WHERE id = ?";
+        String sql = "UPDATE employee SET EmpName = ?, Address = ?, Mobile = ?, EmpRole = ?, UserID = ? WHERE ID = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         pstm.setObject(1, employee.getName());
@@ -85,7 +85,7 @@ public class EmployeeRepo {
     }
 
     public boolean deleteEmployee(String id) throws SQLException {
-        String sql = "DELETE from Employee where id = ?";
+        String sql = "DELETE from employee where ID = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1, id);
 

@@ -201,7 +201,6 @@ public class EmployeeFormController implements Initializable {
         txtEmpMobile.setText(columns.get(3).getCellData(row).toString());
         txtEmpRole.setText(columns.get(4).getCellData(row).toString());
 
-
     }
 
 }
