@@ -70,6 +70,20 @@ public class EmployeeRepo {
         return "Emp 1";
     }
 
+    public static boolean updateEmployee(Employee employee) throws SQLException {
+        String sql = "UPDATE Employee SET name = ?, address = ?, mobile = ?, empRole = ?, userId = ? WHERE id = ?";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setObject(1, employee.getName());
+        pstm.setObject(2, employee.getAddress());
+        pstm.setObject(3, employee.getMobile());
+        pstm.setObject(4, employee.getEmpRole());
+        pstm.setObject(5, employee.getUserId());
+        pstm.setObject(6, employee.getId());
+
+        return pstm.executeUpdate() > 0;
+    }
+
     public boolean deleteEmployee(String id) throws SQLException {
         String sql = "DELETE from Employee where id = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);

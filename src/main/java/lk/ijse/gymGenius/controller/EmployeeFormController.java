@@ -60,10 +60,6 @@ public class EmployeeFormController implements Initializable {
 
     EmployeeRepo employeeRepo = new EmployeeRepo();
 
-    SignUpFormController signUpFormController = new SignUpFormController();
-
-    User user = new User();
-
     private List<Employee> employeeList = new ArrayList<>();
 
     @FXML
@@ -72,6 +68,7 @@ public class EmployeeFormController implements Initializable {
     }
 
     private void clearFields() {
+
         txtEmpId.setText("");
         txtEmpName.setText("");
         txtEmpAddress.setText("");
@@ -96,6 +93,7 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+
         String id = txtEmpId.getText();
         String name = txtEmpName.getText();
         String address = txtEmpAddress.getText();
@@ -156,27 +154,39 @@ public class EmployeeFormController implements Initializable {
         String userId = "U001";
 
         Employee employee = new Employee(id, name, address, mobile, role, userId);
+
+        try {
+            boolean isUpdated = EmployeeRepo.updateEmployee(employee);
+            if (isUpdated){
+                new Alert(Alert.AlertType.CONFIRMATION, "Employee updated").show();
+                loadEmployeeTable();
+            }
+        }catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            txtEmpId.setText(EmployeeRepo.generateNextId());
+            txtEmpId.setText(employeeRepo.generateNextId());
         }catch (SQLException e) {
             throw new RuntimeException(e);
-    }
+        }
         setCellValueFactory();
         loadEmployeeTable();
         this.employeeList = getEmployeeList();
-}
+    }
 
     private void setCellValueFactory() {
+
         colEmpId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colEmpName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colEmpAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colEmpMobile.setCellValueFactory(new PropertyValueFactory<>("mobile"));
         colEmpRole.setCellValueFactory(new PropertyValueFactory<>("empRole"));
+
     }
 
     @FXML
@@ -189,13 +199,12 @@ public class EmployeeFormController implements Initializable {
         txtEmpName.setText(columns.get(1).getCellData(row).toString());
         txtEmpAddress.setText(columns.get(2).getCellData(row).toString());
         txtEmpMobile.setText(columns.get(3).getCellData(row).toString());
-        txtEmpRole.setText(columns.get(3).getCellData(row).toString());
+        txtEmpRole.setText(columns.get(4).getCellData(row).toString());
 
 
     }
 
 }
-
 
 
 

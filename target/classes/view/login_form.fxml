@@ -59,22 +59,22 @@
       <Label id="lblPassword" fx:id="lblPassword" layoutX="760.0" layoutY="402.0" styleClass="lblPassword" stylesheets="@../values/style.css" text="Password" textFill="WHITE" />
       <HBox alignment="CENTER_RIGHT" layoutX="743.0" layoutY="336.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;">
          <children>
-            <ImageView fitHeight="25.0" fitWidth="28.0" nodeOrientation="INHERIT">
+            <ImageView fitHeight="25.0" fitWidth="25.0" nodeOrientation="INHERIT">
                <image>
                   <Image url="@../asserts/icons/userIcon.png" />
                </image>
             </ImageView>
-            <TextField id="txtUsername" fx:id="txtUserName" alignment="CENTER" prefHeight="46.0" prefWidth="299.0" promptText="Username" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtUsername" stylesheets="@../values/style.css" />
+            <TextField id="txtUsername" fx:id="txtUserName" prefHeight="46.0" prefWidth="299.0" promptText="Username" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtUsername" stylesheets="@../values/style.css" />
          </children>
       </HBox>
       <HBox alignment="CENTER_RIGHT" layoutX="743.0" layoutY="426.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;">
          <children>
-            <ImageView fitHeight="45.0" fitWidth="45.0">
+            <ImageView fitHeight="45.0" fitWidth="40.0">
                <image>
                   <Image url="@../asserts/icons/Password_icon_transparent.png" />
                </image>
             </ImageView>
-            <PasswordField id="txtPw" fx:id="txtPw" alignment="CENTER" prefHeight="46.0" prefWidth="301.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtPw" stylesheets="@../values/style.css" />
+            <PasswordField id="txtPw" fx:id="txtPw" prefHeight="46.0" prefWidth="308.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtPw" stylesheets="@../values/style.css" />
          </children>
       </HBox>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" opacity="0.21" stroke="BLACK" strokeType="INSIDE" width="1280.0" />

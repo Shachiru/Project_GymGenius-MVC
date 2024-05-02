@@ -100,6 +100,7 @@ public class MemberFormController  implements Initializable{
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+
         String id = txtMemberId.getText();
         String name = txtName.getText();
         String address = txtAddress.getText();
@@ -117,6 +118,7 @@ public class MemberFormController  implements Initializable{
         }
     }
     private void setCellValueFactory() {
+
         colMemberId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colMemberName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colMemberAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
