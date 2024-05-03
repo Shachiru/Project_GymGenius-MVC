@@ -87,7 +87,10 @@ public class ShopFormController implements Initializable {
 
     @FXML
     void cmbMemberIdOnAction(ActionEvent event) {
+        memberIdClick();
+    }
 
+    private void memberIdClick() {
     }
 
     @FXML

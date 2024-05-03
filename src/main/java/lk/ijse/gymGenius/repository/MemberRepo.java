@@ -14,7 +14,7 @@ import java.util.List;
 public class MemberRepo {
 
     public String generateNextId() throws SQLException {
-        String sql = "Select ID from Member order by ID desc limit 1";
+        String sql = "Select ID from member order by ID desc limit 1";
         Connection connection = DbConnection.getInstance().getConnection();
         ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
 
@@ -60,7 +60,7 @@ public class MemberRepo {
     }
 
     public static boolean saveMember(Member member) throws SQLException {
-        String sql = "INSERT INTO Member VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO member VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         pstm.setObject(1, member.getId());
@@ -74,7 +74,7 @@ public class MemberRepo {
     }
 
     public static boolean updateMember(Member member) throws SQLException {
-        String sql = "Update Member set name=?, address=?, mobile=?, dob=?, gender=? where id=?";
+        String sql = "Update member set name=?, address=?, mobile=?, dob=?, gender=? where id=?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         pstm.setObject(1, member.getName());
@@ -88,7 +88,7 @@ public class MemberRepo {
     }
 
     public static boolean deleteMember(String id) throws SQLException {
-        String sql = "DELETE from Member where id = ?";
+        String sql = "DELETE from member where id = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
         pstm.setObject(1, id);
 

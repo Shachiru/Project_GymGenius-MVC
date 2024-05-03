@@ -76,7 +76,7 @@ public class SupplementRepo {
     }
 
     public boolean updateSupplement(Supplement supplement) throws SQLException {
-        String sql = "UPDATE Supplements SET Description=?, UnitPrice=?, Qty=? WHERE ID=?";
+        String sql = "UPDATE supplements SET Description=?, UnitPrice=?, Qty=? WHERE ID=?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
 
         pstm.setObject(1, supplement.getProductName());
