@@ -28,16 +28,16 @@ public class MemberRepo {
 
     private String splitId(String id) {
         if(id != null){
-            String [] split = id.split("M");
+            String [] split = id.split("M ");
             int memberId = Integer.parseInt(split[1]);
             memberId++;
-            return "M"+memberId;
+            return "M " + memberId;
         }
-        return "M1";
+        return "M 1";
     }
 
     public static List<Member> getMember() throws SQLException {
-        String sql = "SELECT * FROM Member";
+        String sql = "SELECT * FROM member";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);

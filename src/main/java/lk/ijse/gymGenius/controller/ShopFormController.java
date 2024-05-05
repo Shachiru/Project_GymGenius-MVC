@@ -2,15 +2,21 @@ package lk.ijse.gymGenius.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import lk.ijse.gymGenius.repository.ShopRepo;
 
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ShopFormController implements Initializable {
@@ -22,7 +28,7 @@ public class ShopFormController implements Initializable {
     private JFXButton btnPlaceOrder;
 
     @FXML
-    private JFXComboBox<?> cmbMemberId;
+    private JFXComboBox<String> cmbMemberId;
 
     @FXML
     private JFXComboBox<?> cmbSupplementId;
@@ -75,6 +81,17 @@ public class ShopFormController implements Initializable {
     @FXML
     private TextField txtUnitPrice;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            txtOrderId.setText(ShopRepo.generateNextId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        setCellValueFactory();
+        getMemberId();
+    }
+
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
 
@@ -98,8 +115,29 @@ public class ShopFormController implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    private void getMemberId() {
+        ObservableList<String> memberList = FXCollections.observableArrayList();
 
+        try {
+            List<String> memberIdList = ShopRepo.getMemId();
+
+            for (String memberId : memberIdList) {
+                memberList.add(memberId);
+            }
+            cmbMemberId.setItems(memberList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+    private void setCellValueFactory() {
+        colSupplementId.setCellValueFactory(new PropertyValueFactory<>("supplement_id"));
+        colDesc.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+        colAction.setCellValueFactory(new PropertyValueFactory<>("deleteBtn"));
+    }
+
 }

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class MemberFormController  implements Initializable{
+public class MemberFormController implements Initializable{
 
     @FXML
     private TableColumn<String,String> colMemberAddress;
@@ -153,7 +153,6 @@ public class MemberFormController  implements Initializable{
 
     private List<Member> getAllMember() {
         List<Member> memberList = null;
-
         try {
             memberList = MemberRepo.getMember();
         } catch (SQLException e) {
