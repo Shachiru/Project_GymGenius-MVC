@@ -31,7 +31,7 @@ public class ShopFormController implements Initializable {
     private JFXComboBox<String> cmbMemberId;
 
     @FXML
-    private JFXComboBox<?> cmbSupplementId;
+    private JFXComboBox<String> cmbSupplementId;
 
     @FXML
     private TableColumn<?, ?> colAction;
@@ -90,6 +90,21 @@ public class ShopFormController implements Initializable {
         }
         setCellValueFactory();
         getMemberId();
+        getSupplementId();
+    }
+
+    private void getSupplementId() {
+        ObservableList<String> supplementList = FXCollections.observableArrayList();
+        try {
+            List<String> supplementIdList = ShopRepo.getSupId();
+            for (String sId : supplementIdList) {
+                supplementList.add(sId);
+            }
+            cmbSupplementId.setItems(supplementList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

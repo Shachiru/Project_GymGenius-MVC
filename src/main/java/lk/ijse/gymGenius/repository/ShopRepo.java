@@ -25,8 +25,8 @@ public class ShopRepo {
     }
 
     private static String nextOrderId(String currentOrderId) {
-        if(currentOrderId != null){
-            String [] split = currentOrderId.split("O ");
+        if (currentOrderId != null) {
+            String[] split = currentOrderId.split("O ");
             int memberId = Integer.parseInt(split[1]);
             memberId++;
             return "O " + memberId;
@@ -46,5 +46,18 @@ public class ShopRepo {
             memberIdList.add(resultSet.getString(1));
         }
         return memberIdList;
+    }
+
+    public static List<String> getSupId() throws SQLException {
+        String sql = "select ID from supplements";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        List<String> supplementIdList = new ArrayList<>();
+        ResultSet resultSet = pstm.executeQuery();
+        while (resultSet.next()) {
+            supplementIdList.add(resultSet.getString(1));
+        }
+        return supplementIdList;
     }
 }
