@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class ShopTm {
+public class OrderTm {
 
     private String supplement_id;
     private String description;

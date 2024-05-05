@@ -64,7 +64,7 @@ public class DashboardFormController implements Initializable {
 
     @FXML
     void btnShopOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"shop_form.fxml");
+        Navigation.switchPaging(pagingPane,"order_form.fxml");
     }
 
     @FXML

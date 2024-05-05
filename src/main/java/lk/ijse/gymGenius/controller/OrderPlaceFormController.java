@@ -12,22 +12,20 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.Member;
-import lk.ijse.gymGenius.model.Order;
 import lk.ijse.gymGenius.model.Supplement;
 import lk.ijse.gymGenius.repository.MemberRepo;
-import lk.ijse.gymGenius.repository.ShopRepo;
+import lk.ijse.gymGenius.repository.OrderRepo;
 import lk.ijse.gymGenius.repository.SupplementRepo;
-import lk.ijse.gymGenius.tm.ShopTm;
+import lk.ijse.gymGenius.tm.OrderTm;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class ShopFormController implements Initializable {
+public class OrderPlaceFormController implements Initializable {
 
     @FXML
     private JFXButton btnAddToCart;
@@ -63,7 +61,7 @@ public class ShopFormController implements Initializable {
     private Pane pagingPane;
 
     @FXML
-    private TableView<ShopTm> tblShopCart;
+    private TableView<OrderTm> tblShopCart;
 
     @FXML
     private TextField txtDescription;
@@ -89,13 +87,13 @@ public class ShopFormController implements Initializable {
     @FXML
     private TextField txtUnitPrice;
 
-    private ObservableList<ShopTm> cartList = FXCollections.observableArrayList();
+    private ObservableList<OrderTm> cartList = FXCollections.observableArrayList();
     private double netTotal = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            txtOrderId.setText(ShopRepo.generateNextId());
+            txtOrderId.setText(OrderRepo.generateNextId());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -122,7 +120,7 @@ public class ShopFormController implements Initializable {
     private void getSupplementId() {
         ObservableList<String> supplementList = FXCollections.observableArrayList();
         try {
-            List<String> supplementIdList = ShopRepo.getSupId();
+            List<String> supplementIdList = OrderRepo.getSupId();
             for (String sId : supplementIdList) {
                 supplementList.add(sId);
             }
@@ -184,8 +182,8 @@ public class ShopFormController implements Initializable {
             }
         }
 
-        ShopTm shopTm = new ShopTm(supplementId, desc, unitPrice, qty, total, btnRemove);
-        cartList.add(shopTm);
+        OrderTm orderTm = new OrderTm(supplementId, desc, unitPrice, qty, total, btnRemove);
+        cartList.add(orderTm);
 
         tblShopCart.setItems(cartList);
         txtQty.setText("");
@@ -202,6 +200,10 @@ public class ShopFormController implements Initializable {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
+        String orderId = txtOrderId.getText();
+        String memberId = cmbMemberId.getValue();
+        String orderDate = txtOrderDate.getText();
+        double total = Double.parseDouble(txtTotal.getText());
     }
 
     @FXML
@@ -223,7 +225,7 @@ public class ShopFormController implements Initializable {
         ObservableList<String> memberList = FXCollections.observableArrayList();
 
         try {
-            List<String> memberIdList = ShopRepo.getMemId();
+            List<String> memberIdList = OrderRepo.getMemId();
 
             for (String memberId : memberIdList) {
                 memberList.add(memberId);
