@@ -27,9 +27,12 @@
       </Text>
       <TextField fx:id="txtOrderId" layoutX="51.0" layoutY="195.0" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 20;">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <TextField fx:id="txtMemberName" layoutX="573.0" layoutY="287.0" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 20;" />
+      <TextField fx:id="txtMemberName" layoutX="573.0" layoutY="287.0" prefHeight="35.0" prefWidth="334.0" style="-fx-background-radius: 20;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="573.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name:">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -37,7 +40,7 @@
       </Text>
       <TextField fx:id="txtOrderDate" layoutX="572.0" layoutY="195.0" prefHeight="35.0" prefWidth="149.0" style="-fx-background-radius: 20;">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="14.0" />
          </font></TextField>
       <Text fill="#d0fd1d" layoutX="51.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliment ID:">
          <font>
@@ -56,14 +59,23 @@
       </Text>
       <JFXComboBox fx:id="cmbMemberId" layoutX="51.0" layoutY="287.0" onAction="#cmbMemberIdOnAction" prefHeight="35.0" prefWidth="334.0" style="-fx-background-color: white; -fx-background-radius: 30;" />
       <JFXComboBox fx:id="cmbSupplementId" layoutX="51.0" layoutY="372.0" onAction="#cmbSupplementIdOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 30;" />
-      <TextField fx:id="txtDescription" layoutX="285.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 20;" />
+      <TextField fx:id="txtDescription" layoutX="285.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 20;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="285.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUnitPrice" layoutX="524.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 20;" />
-      <TextField fx:id="txtQtyOnHand" layoutX="740.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 20;" />
+      <TextField fx:id="txtUnitPrice" layoutX="524.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 20;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtQtyOnHand" layoutX="740.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" style="-fx-background-radius: 20;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="524.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -74,7 +86,10 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtQty" layoutX="979.0" layoutY="372.0" prefHeight="35.0" prefWidth="116.0" style="-fx-background-radius: 20;" />
+      <TextField fx:id="txtQty" layoutX="979.0" layoutY="372.0" prefHeight="35.0" prefWidth="116.0" style="-fx-background-radius: 20;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="979.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty :">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -96,7 +111,7 @@
         <columns>
           <TableColumn fx:id="colSupplementId" prefWidth="120.0" text="Supplement ID" />
           <TableColumn fx:id="colDesc" prefWidth="170.0" text="Description" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="208.0" text="Unit Price" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="208.0" text="UnitPrice" />
             <TableColumn fx:id="colQty" prefWidth="145.0" text="Qty" />
             <TableColumn fx:id="colTotal" prefWidth="117.0" text="Total" />
             <TableColumn fx:id="colAction" prefWidth="199.0" text="Action" />

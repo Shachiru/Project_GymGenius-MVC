@@ -107,4 +107,11 @@ FOREIGN KEY (m_id) REFERENCES member(ID)on update cascade on delete cascade,
 FOREIGN KEY (supplement_id) REFERENCES supplements(ID)on update cascade on delete cascade
 );
 
+create table orders(
+    order_id varchar(10) primary key,
+    mem_id varchar(10)not null,
+    date date not null,
+    FOREIGN KEY (mem_id) REFERENCES member(ID)on update cascade on delete cascade
+);
+
 insert into User values ('U001','admin','1234');

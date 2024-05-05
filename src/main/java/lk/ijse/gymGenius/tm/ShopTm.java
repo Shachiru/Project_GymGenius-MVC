@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 public class ShopTm {
 
     private String supplement_id;
-    private String desc;
+    private String description;
     private double unitPrice;
     private int qty;
     private double total;
-    private JFXButton deleteBtn;
+    private JFXButton btnRemove;
 }
