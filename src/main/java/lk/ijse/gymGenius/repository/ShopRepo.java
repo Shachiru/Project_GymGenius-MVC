@@ -52,9 +52,10 @@ public class ShopRepo {
         String sql = "select ID from supplements";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
 
         List<String> supplementIdList = new ArrayList<>();
-        ResultSet resultSet = pstm.executeQuery();
+
         while (resultSet.next()) {
             supplementIdList.add(resultSet.getString(1));
         }
