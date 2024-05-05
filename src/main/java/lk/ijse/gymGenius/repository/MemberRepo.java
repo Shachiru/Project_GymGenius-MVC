@@ -13,6 +13,31 @@ import java.util.List;
 
 public class MemberRepo {
 
+    public static Member searchMember(String memberId) throws SQLException {
+
+        String sql = "Select * from member where ID = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setObject(1, memberId);
+
+        ResultSet resultSet = pstm.executeQuery();
+        Member member = null;
+
+        if (resultSet.next()) {
+            String id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String address = resultSet.getString(3);
+            String mobile = resultSet.getString(4);
+            String dob = resultSet.getString(5);
+            String gender = resultSet.getString(6);
+
+           member = new Member(id, name, address, mobile, dob, gender);
+        }
+        return member;
+    }
+
     public String generateNextId() throws SQLException {
         String sql = "Select ID from member order by ID desc limit 1";
         Connection connection = DbConnection.getInstance().getConnection();

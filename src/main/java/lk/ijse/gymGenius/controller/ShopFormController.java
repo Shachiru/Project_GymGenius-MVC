@@ -12,10 +12,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import lk.ijse.gymGenius.model.Member;
+import lk.ijse.gymGenius.model.Supplement;
+import lk.ijse.gymGenius.repository.MemberRepo;
 import lk.ijse.gymGenius.repository.ShopRepo;
+import lk.ijse.gymGenius.repository.SupplementRepo;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -91,6 +96,12 @@ public class ShopFormController implements Initializable {
         setCellValueFactory();
         getMemberId();
         getSupplementId();
+        setDate();
+    }
+
+    private void setDate() {
+        LocalDate now = LocalDate.now();
+        txtOrderDate.setText(String.valueOf(now));
     }
 
     private void getSupplementId() {
@@ -119,15 +130,28 @@ public class ShopFormController implements Initializable {
 
     @FXML
     void cmbMemberIdOnAction(ActionEvent event) {
-        memberIdClick();
-    }
-
-    private void memberIdClick() {
+        String memberId = cmbMemberId.getValue();
+        try {
+            Member member = MemberRepo.searchMember(memberId);
+            txtMemberName.setText(member.getName());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     void cmbSupplementIdOnAction(ActionEvent event) {
-
+        String supplementId = cmbSupplementId.getValue();
+        try {
+            Supplement supplement = SupplementRepo.searchSupplement(supplementId);
+            if (supplement != null) {
+                txtDescription.setText(supplement.getProductName());
+                txtUnitPrice.setText(supplement.getUnitPrice());
+                txtQtyOnHand.setText(supplement.getQty());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void getMemberId() {

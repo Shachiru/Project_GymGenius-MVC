@@ -67,6 +67,26 @@ public class SupplementRepo {
         return pstm.executeUpdate() > 0;
     }
 
+    public static Supplement searchSupplement(String supplementId) throws SQLException {
+        String sql = "select * from supplements where ID = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setObject(1, supplementId);
+        ResultSet resultSet = pstm.executeQuery();
+        Supplement supplement = null;
+
+        if (resultSet.next()) {
+            String id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String unitPrice = resultSet.getString(3);
+            String qty = resultSet.getString(4);
+
+            supplement = new Supplement(id, name, unitPrice, qty);
+        }
+        return supplement;
+    }
+
     public boolean deleteSupplement(String id) throws SQLException {
         String sql = "DELETE from supplements where ID = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
