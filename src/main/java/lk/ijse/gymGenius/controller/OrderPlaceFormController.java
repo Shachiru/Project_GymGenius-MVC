@@ -209,15 +209,16 @@ public class OrderPlaceFormController implements Initializable {
         Order order = new Order(orderId,date,memberId);
         List<OrderDetail>orderList = new ArrayList<>();
 
-        for (int i = 0; i < tblShopCart.getItems().size();i++){
+        for (int i = 0; i < tblShopCart.getItems().size();i++) {
             OrderTm orderTm = cartList.get(i);
-            OrderDetail orderDetail= new OrderDetail(orderId,
+            OrderDetail orderDetail = new OrderDetail(orderId,
                     cmbSupplementId.getValue(),
                     orderTm.getQty(),
                     orderTm.getUnitPrice(),
                     Double.valueOf(txtTotal.getText())
             );
             orderList.add(orderDetail);
+        }
             PlaceOrder placeOrder = new PlaceOrder(order,orderList);
 
             try {
@@ -230,7 +231,6 @@ public class OrderPlaceFormController implements Initializable {
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        }
     }
 
     @FXML
