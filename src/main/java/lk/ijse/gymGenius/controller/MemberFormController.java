@@ -112,9 +112,12 @@ public class MemberFormController implements Initializable{
 
         try {
             boolean isSaved = MemberRepo.saveMember(member);
+            if (isSaved){
+                new Alert(Alert.AlertType.CONFIRMATION,"Member saved").show();
+                loadMemberTable();
+            }
         } catch (SQLException e) {
-            new Alert(Alert.AlertType.CONFIRMATION,"Member saved").show();
-            loadMemberTable();
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
     }
     private void setCellValueFactory() {
