@@ -19,11 +19,26 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtEmpId" layoutX="51.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <TextField fx:id="txtEmpName" layoutX="51.0" layoutY="275.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <TextField fx:id="txtEmpAddress" layoutX="51.0" layoutY="355.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <TextField fx:id="txtEmpMobile" layoutX="588.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <TextField fx:id="txtEmpRole" layoutX="588.0" layoutY="275.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtEmpId" layoutX="51.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtEmpName" layoutX="51.0" layoutY="275.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtEmpAddress" layoutX="51.0" layoutY="355.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtEmpMobile" layoutX="588.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtEmpRole" layoutX="588.0" layoutY="275.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="51.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID">
          <font>
             <Font name="System Bold" size="14.0" />

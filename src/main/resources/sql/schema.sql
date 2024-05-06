@@ -66,12 +66,6 @@ Amount decimal(10,2),
 FOREIGN KEY (m_id) REFERENCES member(ID)on update cascade on delete cascade
 );
 
-create table supplier(
-Id varchar(10)primary key,
-Name varchar(30),
-Address varchar(30)
-);
-
 create table supplements(
 ID varchar(10)primary key,
 Description varchar(255),
@@ -79,32 +73,21 @@ UnitPrice decimal(10,2),
 Qty int
 );
 
-create table stock_details(
-supplement_id varchar(10),
-supplier_id varchar(10),
-Date date,
-FOREIGN KEY (supplement_id) REFERENCES supplements(ID)on update cascade on delete cascade,
-FOREIGN KEY (supplier_id) REFERENCES supplier(ID)on update cascade on delete cascade
-);
-
-create table supplements_details(
-m_id varchar(10),
-supplement_id varchar(10),
-qty int,
-Date date,
-FOREIGN KEY (m_id) REFERENCES member(ID)on update cascade on delete cascade,
-FOREIGN KEY (supplement_id) REFERENCES supplements(ID)on update cascade on delete cascade
-);
-
 create table orders(
 o_id varchar(10) primary key,
 Date date,
 m_id varchar(10),
-supplement_id varchar(10),
-qty int(10),
-total decimal(10,2),
-FOREIGN KEY (m_id) REFERENCES member(ID)on update cascade on delete cascade,
-FOREIGN KEY (supplement_id) REFERENCES supplements(ID)on update cascade on delete cascade
+FOREIGN KEY (m_id) REFERENCES member(ID)on update cascade on delete cascade
+);
+
+create table order_detail(
+    order_id varchar(10) not null,
+    sup_id varchar(10)not null ,
+    qty int not null ,
+    unitPrice decimal not null ,
+    total double,
+    foreign key (order_id) references orders(o_id) on update cascade on delete cascade ,
+    foreign key (sup_id) references supplements(ID) on update cascade on delete cascade
 );
 
 insert into User values ('U001','admin','1234');

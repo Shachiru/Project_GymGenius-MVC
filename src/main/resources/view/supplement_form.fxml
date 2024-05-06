@@ -20,25 +20,37 @@
          </font>
       </Text>
       <TextField alignment="CENTER" layoutX="748.0" layoutY="119.0" prefHeight="39.0" prefWidth="236.0" promptText="search by name" style="-fx-background-color: white; -fx-background-radius: 30;" />
-      <TextField fx:id="txtSupplementId" layoutX="78.0" layoutY="230.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtSupplementId" layoutX="78.0" layoutY="230.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="78.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplement ID:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtProductName" layoutX="78.0" layoutY="319.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtProductName" layoutX="78.0" layoutY="319.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="78.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUnitPrice" layoutX="686.0" layoutY="230.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtUnitPrice" layoutX="686.0" layoutY="230.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="686.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtQty" layoutX="686.0" layoutY="319.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtQty" layoutX="686.0" layoutY="319.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="686.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />

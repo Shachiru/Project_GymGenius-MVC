@@ -11,16 +11,18 @@ import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import lk.ijse.gymGenius.model.Member;
-import lk.ijse.gymGenius.model.Supplement;
+import lk.ijse.gymGenius.model.*;
 import lk.ijse.gymGenius.repository.MemberRepo;
 import lk.ijse.gymGenius.repository.OrderRepo;
+import lk.ijse.gymGenius.repository.PlaceOrderRepo;
 import lk.ijse.gymGenius.repository.SupplementRepo;
 import lk.ijse.gymGenius.tm.OrderTm;
 
 import java.net.URL;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -201,9 +203,34 @@ public class OrderPlaceFormController implements Initializable {
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
         String orderId = txtOrderId.getText();
+        Date date = Date.valueOf(txtOrderDate.getText());
         String memberId = cmbMemberId.getValue();
-        String orderDate = txtOrderDate.getText();
-        double total = Double.parseDouble(txtTotal.getText());
+
+        Order order = new Order(orderId,date,memberId);
+        List<OrderDetail>orderList = new ArrayList<>();
+
+        for (int i = 0; i < tblShopCart.getItems().size();i++){
+            OrderTm orderTm = cartList.get(i);
+            OrderDetail orderDetail= new OrderDetail(orderId,
+                    cmbSupplementId.getValue(),
+                    orderTm.getQty(),
+                    orderTm.getUnitPrice(),
+                    Double.valueOf(txtTotal.getText())
+            );
+            orderList.add(orderDetail);
+            PlaceOrder placeOrder = new PlaceOrder(order,orderList);
+
+            try {
+                boolean isOrderPlaced =  PlaceOrderRepo.orderPlaced(placeOrder);
+                if(isOrderPlaced){
+                    new Alert(Alert.AlertType.CONFIRMATION," Order Places Successfully").show();
+                }else{
+                    new Alert(Alert.AlertType.WARNING,"Something went Wrong").show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }
+        }
     }
 
     @FXML

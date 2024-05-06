@@ -20,9 +20,18 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="txtMemberId" layoutX="51.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <TextField fx:id="txtName" layoutX="51.0" layoutY="275.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
-      <TextField fx:id="txtAddress" layoutX="51.0" layoutY="355.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtMemberId" layoutX="51.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtName" layoutX="51.0" layoutY="275.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
+      <TextField fx:id="txtAddress" layoutX="51.0" layoutY="355.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="51.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member ID">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -48,7 +57,10 @@
             <TableColumn fx:id="colMemberGender" prefWidth="124.0" text="Gender" />
         </columns>
       </TableView>
-      <TextField fx:id="txtMobileNo" layoutX="588.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtMobileNo" layoutX="588.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text fill="#d0fd1d" layoutX="588.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile No">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -112,7 +124,10 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtGender" layoutX="588.0" layoutY="355.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="txtGender" layoutX="588.0" layoutY="355.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></TextField>
       <Text layoutX="70.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" underline="true">
          <font>
             <Font name="Georgia Bold" size="20.0" />

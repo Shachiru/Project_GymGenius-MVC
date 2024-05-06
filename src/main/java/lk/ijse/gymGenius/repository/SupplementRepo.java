@@ -1,6 +1,7 @@
 package lk.ijse.gymGenius.repository;
 
 import lk.ijse.gymGenius.db.DbConnection;
+import lk.ijse.gymGenius.model.OrderDetail;
 import lk.ijse.gymGenius.model.Supplement;
 
 import java.sql.Connection;
@@ -85,6 +86,25 @@ public class SupplementRepo {
             supplement = new Supplement(id, name, unitPrice, qty);
         }
         return supplement;
+    }
+
+    public static boolean updateSupplementQty(List<OrderDetail> orderDetail) throws SQLException {
+        for (OrderDetail od : orderDetail){
+            if(!updateSupplementQty(od)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean updateSupplementQty(OrderDetail od) throws SQLException {
+        String sql = "update supplements set Qty = Qty - ? where ID = ? ";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setInt(1,od.getQty());
+        pstm.setString(2,od.getSupplement_id());
+
+        return pstm.executeUpdate() > 0;
     }
 
     public boolean deleteSupplement(String id) throws SQLException {

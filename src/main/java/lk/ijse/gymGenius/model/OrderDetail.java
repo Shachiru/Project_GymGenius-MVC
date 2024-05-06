@@ -4,13 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Order {
+public class OrderDetail {
+
     private String orderId;
-    private Date date;
-    private String memberId;
+    private String supplement_id;
+    private int qty;
+    private double unitPrice;
+    private double total;
 }

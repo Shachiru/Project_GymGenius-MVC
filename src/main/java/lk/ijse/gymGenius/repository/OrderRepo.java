@@ -1,6 +1,7 @@
 package lk.ijse.gymGenius.repository;
 
 import lk.ijse.gymGenius.db.DbConnection;
+import lk.ijse.gymGenius.model.Order;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -60,5 +61,16 @@ public class OrderRepo {
             supplementIdList.add(resultSet.getString(1));
         }
         return supplementIdList;
+    }
+
+    public static boolean saveOrder(Order order) throws SQLException {
+        String sql = "Insert  into orders values (?,?,?) ";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection().prepareStatement(sql);
+
+        pstm.setString(1,order.getOrderId());
+        pstm.setDate(2,order.getDate());
+        pstm.setString(3,order.getMemberId());
+
+        return pstm.executeUpdate()>0;
     }
 }
