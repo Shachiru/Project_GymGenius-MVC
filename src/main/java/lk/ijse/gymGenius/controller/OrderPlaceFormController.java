@@ -206,16 +206,19 @@ public class OrderPlaceFormController implements Initializable {
         Date date = Date.valueOf(txtOrderDate.getText());
         String memberId = cmbMemberId.getValue();
 
+        double orderAmount = 0;
         Order order = new Order(orderId,date,memberId);
         List<OrderDetail>orderList = new ArrayList<>();
 
         for (int i = 0; i < tblShopCart.getItems().size();i++) {
             OrderTm orderTm = cartList.get(i);
-            OrderDetail orderDetail = new OrderDetail(orderId,
-                    cmbSupplementId.getValue(),
+
+            OrderDetail orderDetail = new OrderDetail(
+                    orderId,
+                    orderTm.getSupplement_id(),
                     orderTm.getQty(),
                     orderTm.getUnitPrice(),
-                    Double.valueOf(txtTotal.getText())
+                    orderAmount += orderTm.getQty()*orderTm.getUnitPrice()
             );
             orderList.add(orderDetail);
         }
