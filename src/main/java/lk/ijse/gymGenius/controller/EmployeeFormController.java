@@ -150,9 +150,12 @@ public class EmployeeFormController implements Initializable {
 
         try {
             boolean isSaved = EmployeeRepo.saveEmployee(employee);
+            if (isSaved){
+                new Alert(Alert.AlertType.CONFIRMATION, "Employee saved").show();
+                loadEmployeeTable();
+            }
         }catch (SQLException e) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Employee saved").show();
-            loadEmployeeTable();
+           new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 
