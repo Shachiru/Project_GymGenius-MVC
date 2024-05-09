@@ -90,7 +90,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0">
+            <ImageView fitHeight="23.0" fitWidth="25.0">
                <image>
                   <Image url="@../asserts/icons/trash.png" />
                </image>
@@ -102,7 +102,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0">
+            <ImageView fitHeight="25.0" fitWidth="26.0">
                <image>
                   <Image url="@../asserts/icons/update.png" />
                </image>
@@ -114,7 +114,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0">
+            <ImageView fitHeight="25.0" fitWidth="20.0">
                <image>
                   <Image url="@../asserts/icons/save.png" />
                </image>

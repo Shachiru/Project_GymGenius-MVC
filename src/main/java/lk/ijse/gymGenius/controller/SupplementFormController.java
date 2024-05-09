@@ -94,9 +94,12 @@ public class SupplementFormController implements Initializable {
 
         try {
             boolean isSaved = SupplementRepo.saveSupplement(supplement);
+            if(isSaved){
+                new Alert(Alert.AlertType.CONFIRMATION,"Supplement added").show();
+                loadSupplementTable();
+            }
         } catch(SQLException e){
-            new Alert(Alert.AlertType.CONFIRMATION,"Supplement added").show();
-            loadSupplementTable();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
 
