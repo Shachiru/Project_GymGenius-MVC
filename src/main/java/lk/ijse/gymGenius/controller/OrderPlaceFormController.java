@@ -17,15 +17,16 @@ import lk.ijse.gymGenius.repository.OrderRepo;
 import lk.ijse.gymGenius.repository.PlaceOrderRepo;
 import lk.ijse.gymGenius.repository.SupplementRepo;
 import lk.ijse.gymGenius.tm.OrderTm;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class OrderPlaceFormController implements Initializable {
 
@@ -263,6 +264,29 @@ public class OrderPlaceFormController implements Initializable {
             cmbMemberId.setItems(memberList);
 
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    @FXML
+    void btnPrintBillOnAction(ActionEvent event) {
+
+        HashMap hashMap = new HashMap<>();
+        hashMap.put("Order Id",txtOrderId.getText());
+        hashMap.put("id" , cmbMemberId.getValue());
+        hashMap.put("Name" , txtMemberName.getText());
+        hashMap.put("supplement" , txtDescription.getText());
+        hashMap.put("unitPrice" , txtUnitPrice.getText());
+        hashMap.put("qty" , txtQty.getText());
+        hashMap.put("total" , txtTotal.getText());
+
+        try {
+            JasperDesign load = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/reports/PlaceOrder.jrxml"));
+            JasperReport jasperReport = JasperCompileManager.compileReport(load);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hashMap, new JREmptyDataSource());
+            JasperViewer.viewReport(jasperPrint,false);
+        } catch (JRException e) {
             throw new RuntimeException(e);
         }
     }

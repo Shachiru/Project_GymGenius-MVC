@@ -128,5 +128,10 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
+      <JFXButton fx:id="btnPrintBill" layoutX="1055.0" layoutY="844.0" onAction="#btnPrintBillOnAction" style="-fx-background-color: #d0fd1d;" text="Print Bill">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
    </children>
 </Pane>
