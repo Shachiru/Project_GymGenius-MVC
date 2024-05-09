@@ -4,6 +4,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
@@ -19,6 +20,10 @@
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Text>
+            <Label fx:id="lblMemberCount" alignment="CENTER" layoutX="37.0" layoutY="49.0" prefHeight="52.0" prefWidth="109.0" text="count">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font></Label>
          </children>
       </Pane>
       <Pane layoutX="500.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
@@ -28,6 +33,7 @@
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Text>
+            <Label fx:id="lblEmployeeCount" alignment="CENTER" layoutX="37.0" layoutY="57.0" prefHeight="52.0" prefWidth="109.0" />
          </children>
       </Pane>
       <Pane layoutX="840.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
@@ -37,16 +43,17 @@
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Text>
+            <Label fx:id="lblSupplements" alignment="CENTER" layoutX="37.0" layoutY="57.0" prefHeight="52.0" prefWidth="109.0" />
          </children>
       </Pane>
       <Pane layoutX="42.0" layoutY="314.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: black; -fx-background-radius: 20;">
          <children>
-            <PieChart prefHeight="500.0" prefWidth="500.0" />
+            <PieChart fx:id="pieChart" prefHeight="500.0" prefWidth="500.0" title="pieChart" />
          </children>
       </Pane>
       <Pane layoutX="615.0" layoutY="314.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: black; -fx-background-radius: 20;">
          <children>
-            <BarChart prefHeight="500.0" prefWidth="500.0">
+            <BarChart fx:id="barChart" prefHeight="500.0" prefWidth="500.0" title="barChart">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -56,5 +63,15 @@
             </BarChart>
          </children>
       </Pane>
+      <Label fx:id="lblDate" layoutX="932.0" layoutY="63.0" prefHeight="17.0" prefWidth="154.0" text="Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="947.0" layoutY="23.0" prefHeight="17.0" prefWidth="154.0" text="Time" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

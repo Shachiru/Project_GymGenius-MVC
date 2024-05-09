@@ -120,4 +120,17 @@ public class MemberRepo {
         return pstm.executeUpdate() > 0;
     }
 
+    public int countMember() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT COUNT(ID) FROM member";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()) {
+            int idd = Integer.parseInt(resultSet.getString(1));
+            return idd;
+        }
+        return Integer.parseInt(null);
+    }
 }
