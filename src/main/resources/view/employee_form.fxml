@@ -73,48 +73,48 @@
             <TableColumn fx:id="colEmpRole" minWidth="0.0" prefWidth="169.0" text="Role" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="528.0" layoutY="418.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 20;" text="Clear" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="528.0" layoutY="418.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 20;" text="Clear">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0">
+            <ImageView fitHeight="24.0" fitWidth="29.0">
                <image>
-                  <Image url="@../asserts/icons/broom.png" />
+                  <Image url="@../asserts/icons/clean.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="673.0" layoutY="418.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #e74c3c; -fx-background-radius: 20;" text="Delete" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="673.0" layoutY="418.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 20;" text="Delete">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0">
+            <ImageView fitHeight="23.0" fitWidth="25.0">
                <image>
                   <Image url="@../asserts/icons/trash.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="812.0" layoutY="418.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #e67e22; -fx-background-radius: 20;" text="Update" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="812.0" layoutY="418.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 20;" text="Update">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0">
+            <ImageView fitHeight="25.0" fitWidth="26.0">
                <image>
                   <Image url="@../asserts/icons/update.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="950.0" layoutY="418.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #2980b9; -fx-background-radius: 20;" text="Save" textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="950.0" layoutY="418.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 20;" text="Save">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0">
+            <ImageView fitHeight="25.0" fitWidth="20.0">
                <image>
                   <Image url="@../asserts/icons/save.png" />
                </image>
