@@ -9,6 +9,7 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.DashboardDetail;
+import lk.ijse.gymGenius.repository.EmployeeRepo;
 import lk.ijse.gymGenius.repository.MemberRepo;
 
 import java.sql.SQLException;
@@ -49,6 +50,7 @@ public class DashboardDetailFormController {
         //setPieChart();
         timenow();
         countMembers();
+        countEmployee();
     }
 
     void setPieChart() throws SQLException {
@@ -100,4 +102,18 @@ public class DashboardDetailFormController {
             throwables.printStackTrace();
         }
     }
+
+    void countEmployee(){
+        EmployeeRepo employeeRepo = new EmployeeRepo();
+
+        try{
+            int count = employeeRepo.countEmployee();
+            lblEmployeeCount.setText(String.valueOf("0"+count));
+
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+    }
+
+
 }

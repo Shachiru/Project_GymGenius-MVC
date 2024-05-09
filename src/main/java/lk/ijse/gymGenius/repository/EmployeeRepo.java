@@ -93,4 +93,20 @@ public class EmployeeRepo {
         return pstm.executeUpdate() > 0;
     }
 
+    public int countEmployee() throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT COUNT(ID) as employee_count FROM employee";
+
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            int employeeCount = Integer.parseInt(resultSet.getString("employee_count"));
+            return employeeCount;
+        }
+        return Integer.parseInt(null);
+    }
 }

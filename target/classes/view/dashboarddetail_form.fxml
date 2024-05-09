@@ -20,7 +20,7 @@
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Text>
-            <Label fx:id="lblMemberCount" alignment="CENTER" layoutX="37.0" layoutY="49.0" prefHeight="52.0" prefWidth="109.0" text="count">
+            <Label fx:id="lblMemberCount" alignment="CENTER" layoutX="37.0" layoutY="49.0" prefHeight="52.0" prefWidth="109.0">
                <font>
                   <Font name="System Bold" size="32.0" />
                </font></Label>
@@ -33,7 +33,10 @@
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Text>
-            <Label fx:id="lblEmployeeCount" alignment="CENTER" layoutX="37.0" layoutY="57.0" prefHeight="52.0" prefWidth="109.0" />
+            <Label fx:id="lblEmployeeCount" alignment="CENTER" layoutX="37.0" layoutY="57.0" prefHeight="52.0" prefWidth="109.0">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font></Label>
          </children>
       </Pane>
       <Pane layoutX="840.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
