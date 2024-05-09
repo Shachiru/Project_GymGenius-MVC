@@ -7,18 +7,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.Member;
 import lk.ijse.gymGenius.repository.MemberRepo;
 import lk.ijse.gymGenius.tm.MemberTm;
+import lk.ijse.gymGenius.util.ValidateUtil;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class MemberFormController implements Initializable{
 
@@ -67,6 +71,8 @@ public class MemberFormController implements Initializable{
     MemberRepo memberRepo = new MemberRepo();
 
     private List<Member> memberList = new ArrayList<>();
+
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
@@ -193,6 +199,13 @@ public class MemberFormController implements Initializable{
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
+
+        Pattern name = Pattern.compile("^[A-z|\\s]{3,}$");
+        Pattern number = Pattern.compile("^([+]94{1,3}|[0])([1-9]{2})([0-9]){7}$");
+
+        map.put(txtName,name);
+        map.put(txtMobileNo,number);
+
         setCellValueFactory();
         loadMemberTable();
         this.memberList = getAllMember();
@@ -211,5 +224,9 @@ public class MemberFormController implements Initializable{
         pickerDate.setValue(LocalDate.parse(columns.get(4).getCellData(row).toString()));
         txtGender.setText(columns.get(5).getCellData(row).toString());
 
+    }
+    @FXML
+    void txtKeyOnReleased(KeyEvent event) {
+        ValidateUtil.validation(map);
     }
 }

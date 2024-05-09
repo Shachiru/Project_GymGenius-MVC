@@ -7,18 +7,22 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.Employee;
 import lk.ijse.gymGenius.model.User;
 import lk.ijse.gymGenius.repository.EmployeeRepo;
 import lk.ijse.gymGenius.tm.EmployeeTm;
+import lk.ijse.gymGenius.util.ValidateUtil;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 public class EmployeeFormController implements Initializable {
 
@@ -62,6 +66,8 @@ public class EmployeeFormController implements Initializable {
 
     private List<Employee> employeeList = new ArrayList<>();
 
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap<>();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -69,6 +75,13 @@ public class EmployeeFormController implements Initializable {
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        Pattern name = Pattern.compile("^[A-z|\\s]{3,}$");
+        Pattern number = Pattern.compile("^([+]94{1,3}|[0])([1-9]{2})([0-9]){7}$");
+
+        map.put(txtEmpName,name);
+        map.put(txtEmpMobile,number);
+
         setCellValueFactory();
         loadEmployeeTable();
         this.employeeList = getAllEmployee();
@@ -204,6 +217,10 @@ public class EmployeeFormController implements Initializable {
         txtEmpMobile.setText(columns.get(3).getCellData(row).toString());
         txtEmpRole.setText(columns.get(4).getCellData(row).toString());
 
+    }
+    @FXML
+    void txtKeyOnReleased(KeyEvent event) {
+        ValidateUtil.validation(map);
     }
 
 }

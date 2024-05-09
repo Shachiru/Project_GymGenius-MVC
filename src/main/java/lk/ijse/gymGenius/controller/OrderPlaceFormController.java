@@ -218,7 +218,7 @@ public class OrderPlaceFormController implements Initializable {
                     orderTm.getSupplement_id(),
                     orderTm.getQty(),
                     orderTm.getUnitPrice(),
-                    orderAmount += orderTm.getQty()*orderTm.getUnitPrice()
+                    orderTm.getQty()*orderTm.getUnitPrice()
             );
             orderList.add(orderDetail);
         }

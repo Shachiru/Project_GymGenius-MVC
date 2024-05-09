@@ -24,7 +24,7 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <TextField fx:id="txtName" layoutX="51.0" layoutY="275.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtName" layoutX="51.0" layoutY="275.0" onKeyReleased="#txtKeyOnReleased" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
@@ -57,7 +57,7 @@
             <TableColumn fx:id="colMemberGender" prefWidth="124.0" text="Gender" />
         </columns>
       </TableView>
-      <TextField fx:id="txtMobileNo" layoutX="588.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtMobileNo" layoutX="588.0" layoutY="195.0" onKeyReleased="#txtKeyOnReleased" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
