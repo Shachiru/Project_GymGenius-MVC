@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="rootNode" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.LoginFormController">
    <children>
@@ -21,69 +20,43 @@
             <Image url="@../asserts/images/LoginPageBackground.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="737.0" opacity="0.49" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="DARKEN" cache="true" cacheHint="QUALITY" height="616.0" layoutX="691.0" layoutY="42.0" opacity="0.67" stroke="#d0fd1d" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeWidth="2.0" width="442.0" />
-      <Label id="lblWelcome" fx:id="lblWelcome" alignment="CENTER" layoutX="693.0" layoutY="87.0" prefHeight="46.0" prefWidth="438.0" styleClass="lblWelcome" stylesheets="@../values/style.css" text="Welcome to GYM genius" textFill="#f8f8f8" underline="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="737.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+      <Rectangle blendMode="SRC_ATOP" cache="true" fill="#14213d" height="616.0" layoutX="743.0" layoutY="42.0" stroke="#d0fd1d" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" width="442.0" />
+      <Label id="lblWelcome" fx:id="lblWelcome" alignment="CENTER" layoutX="87.0" layoutY="76.0" prefHeight="94.0" prefWidth="530.0" styleClass="lblWelcome" stylesheets="@../values/style.css" text="Welcome to GYM genius" textFill="#f8f8f8">
          <font>
-            <Font name="Arial Bold" size="36.0" />
+            <Font name="Arial Bold" size="67.0" />
          </font>
       </Label>
-      <ImageView fitHeight="192.0" fitWidth="200.0" layoutX="43.0">
-         <image>
-            <Image url="@../asserts/logo/GymGenius_LOGO.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="62.0" fitWidth="66.0" layoutX="879.0" layoutY="161.0">
-         <image>
-            <Image url="@../asserts/icons/userIcon.png" />
-         </image>
-      </ImageView>
-      <JFXButton id="loginbtn" fx:id="btnLogin" buttonType="RAISED" layoutX="833.0" layoutY="558.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-background-color: D0FD1D;" styleClass="loginbtn" stylesheets="@../values/style.css" text="Login">
+      <JFXButton id="loginbtn" fx:id="btnLogin" buttonType="RAISED" layoutX="885.0" layoutY="558.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-background-color: FCA311;" styleClass="loginbtn" stylesheets="@../values/style.css" text="Login">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <Text fill="WHITE" layoutX="883.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In">
+      <Label id="lblUsername" fx:id="lblUsername" layoutX="804.0" layoutY="306.0" styleClass="lblUsername" stylesheets="@../values/style.css" text="Username" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Text>
-      <TextField id="txtSlogan" fx:id="txtSlogan" layoutX="40.0" layoutY="133.0" prefHeight="30.0" prefWidth="206.0" style="-fx-background-color: red; -fx-border-width: 0;" styleClass="txtSlogan" stylesheets="@../values/style.css" text="Power Up Your Mind and Body">
+            <Font size="15.0" />
+         </font></Label>
+      <Label id="lblPassword" fx:id="lblPassword" layoutX="806.0" layoutY="398.0" styleClass="lblPassword" stylesheets="@../values/style.css" text="Password" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </TextField>
-      <Label id="lblUsername" fx:id="lblUsername" layoutX="759.0" layoutY="311.0" styleClass="lblUsername" stylesheets="@../values/style.css" text="Username" textFill="WHITE" />
-      <Label id="lblPassword" fx:id="lblPassword" layoutX="760.0" layoutY="402.0" styleClass="lblPassword" stylesheets="@../values/style.css" text="Password" textFill="WHITE" />
-      <HBox alignment="CENTER_RIGHT" layoutX="743.0" layoutY="336.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;">
+            <Font size="15.0" />
+         </font></Label>
+      <HBox alignment="CENTER_RIGHT" layoutX="795.0" layoutY="336.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: E5E5E5; -fx-background-radius: 30;">
          <children>
-            <ImageView fitHeight="25.0" fitWidth="25.0" nodeOrientation="INHERIT">
-               <image>
-                  <Image url="@../asserts/icons/userIcon.png" />
-               </image>
-            </ImageView>
-            <TextField id="txtUsername" fx:id="txtUserName" prefHeight="46.0" prefWidth="299.0" promptText="Username" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtUsername" stylesheets="@../values/style.css" />
+            <TextField id="txtUsername" fx:id="txtUserName" prefHeight="46.0" prefWidth="308.0" promptText="Username" style="-fx-background-color: E5E5E5; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtUsername" stylesheets="@../values/style.css">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" layoutX="743.0" layoutY="426.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30;">
+      <HBox alignment="CENTER_RIGHT" layoutX="795.0" layoutY="428.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: E5E5E5; -fx-background-radius: 30;">
          <children>
-            <ImageView fitHeight="45.0" fitWidth="40.0">
-               <image>
-                  <Image url="@../asserts/icons/Password_icon_transparent.png" />
-               </image>
-            </ImageView>
-            <PasswordField id="txtPw" fx:id="txtPw" prefHeight="46.0" prefWidth="308.0" promptText="Password" style="-fx-background-color: #7f8c8d; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtPw" stylesheets="@../values/style.css" />
+            <PasswordField id="txtPw" fx:id="txtPw" prefHeight="46.0" prefWidth="308.0" promptText="Password" style="-fx-background-color: E5E5E5; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtPw" stylesheets="@../values/style.css" />
          </children>
       </HBox>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" opacity="0.21" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="46.0" layoutY="691.0" opacity="0.75" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
       <Label id="lblSince" layoutX="49.0" layoutY="684.0" prefHeight="39.0" prefWidth="76.0" styleClass="lblSince" stylesheets="@../values/style.css" text="Since 2019" textFill="WHITE" />
-      <Hyperlink fx:id="hyperSignUp" layoutX="992.0" layoutY="491.0" onAction="#linkSignUpOnAction" text="Sign Up" />
-      <ImageView fx:id="imgPower" fitHeight="35.0" fitWidth="35.0" layoutX="1081.0" layoutY="51.0" onMouseClicked="#btnPower">
+      <Hyperlink fx:id="hyperSignUp" layoutX="1064.0" layoutY="491.0" onAction="#linkSignUpOnAction" text="Sign Up" underline="true" />
+      <ImageView fitHeight="240.0" fitWidth="240.0" layoutX="844.0" layoutY="50.0">
          <image>
-            <Image url="@../asserts/icons/power-button.png" />
+            <Image url="@../asserts/logo/GymGenius.png" />
          </image>
       </ImageView>
    </children>

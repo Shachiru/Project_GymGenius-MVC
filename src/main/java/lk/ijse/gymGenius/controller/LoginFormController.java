@@ -48,13 +48,13 @@ public class LoginFormController {
     @FXML
     private TextField txtUserName;
 
-    @FXML
+    /*@FXML
     private ImageView imgPower;
 
     @FXML
     void btnPower(MouseEvent event) {
         System.exit(1);
-    }
+    }*/
 
     @FXML
     void btnLoginOnAction(ActionEvent event) {

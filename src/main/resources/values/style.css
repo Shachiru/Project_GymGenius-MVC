@@ -8,9 +8,9 @@
     -fx-font-weight: bold;
 }
 .lblWelcome{
-    -fx-text-fill: D0FD1D;
+    -fx-text-fill: FCA311;
     -fx-font-weight: bold;
-    -fx-font-size: 24px;
+    -fx-font-size: 42px;
 }
 .txtUsername{
     -fx-font-size: 16px;
