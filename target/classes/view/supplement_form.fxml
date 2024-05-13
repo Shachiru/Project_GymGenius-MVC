@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -29,29 +30,29 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtProductName" layoutX="78.0" layoutY="319.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtProductName" layoutX="78.0" layoutY="337.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#d0fd1d" layoutX="78.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name:" wrappingWidth="116.421875">
+      <Text fill="#d0fd1d" layoutX="78.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUnitPrice" layoutX="686.0" layoutY="230.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtUnitPrice" layoutX="686.0" layoutY="213.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#d0fd1d" layoutX="686.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="116.421875">
+      <Text fill="#d0fd1d" layoutX="686.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtQty" layoutX="686.0" layoutY="319.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtQty" layoutX="678.0" layoutY="310.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#d0fd1d" layoutX="686.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" wrappingWidth="116.421875">
+      <Text fill="#d0fd1d" layoutX="686.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -112,5 +113,8 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <Label fx:id="lblSupName" layoutX="78.0" layoutY="373.0" prefHeight="17.0" prefWidth="379.0" textFill="RED" />
+      <Label fx:id="lblUnitPrice" layoutX="686.0" layoutY="257.0" prefHeight="17.0" prefWidth="282.0" textFill="RED" />
+      <Label fx:id="lblSupQTY" layoutX="686.0" layoutY="346.0" prefHeight="17.0" prefWidth="282.0" textFill="RED" />
    </children>
 </Pane>

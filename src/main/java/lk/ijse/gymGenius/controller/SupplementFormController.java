@@ -12,7 +12,9 @@ import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.Supplement;
 import lk.ijse.gymGenius.repository.SupplementRepo;
 import lk.ijse.gymGenius.tm.SupplementTm;
+import lk.ijse.gymGenius.util.DataValidateController;
 
+import javax.xml.crypto.Data;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -50,6 +52,15 @@ public class SupplementFormController implements Initializable {
 
     @FXML
     private TextField txtUnitPrice;
+
+    @FXML
+    private Label lblSupName;
+
+    @FXML
+    private Label lblSupQTY;
+
+    @FXML
+    private Label lblUnitPrice;
 
     SupplementRepo supplementRepo = new SupplementRepo();
 
@@ -92,14 +103,32 @@ public class SupplementFormController implements Initializable {
 
         Supplement supplement = new Supplement(id,productName,unitPrice,qty);
 
-        try {
-            boolean isSaved = SupplementRepo.saveSupplement(supplement);
-            if(isSaved){
-                new Alert(Alert.AlertType.CONFIRMATION,"Supplement added").show();
-                loadSupplementTable();
+        if (DataValidateController.validateSupplementQty(txtQty.getText())) {
+            lblSupQTY.setText("");
+
+            if (DataValidateController.validateSupplementPrice(txtUnitPrice.getText())) {
+                lblUnitPrice.setText("");
+
+                if (DataValidateController.validateSupplementName(txtProductName.getText())) {
+                    lblSupName.setText("");
+
+                    try {
+                        boolean isSaved = SupplementRepo.saveSupplement(supplement);
+                        if (isSaved) {
+                            new Alert(Alert.AlertType.CONFIRMATION, "Supplement added").show();
+                            loadSupplementTable();
+                        }
+                    } catch (SQLException e) {
+                        new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                    }
+                } else {
+                    lblSupName.setText("Invalid Name");
+                }
+            } else {
+                lblUnitPrice.setText("Invalid Price");
             }
-        } catch(SQLException e){
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }else {
+            lblSupQTY.setText("Invalid Quantity");
         }
     }
 

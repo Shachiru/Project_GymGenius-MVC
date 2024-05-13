@@ -88,13 +88,6 @@ public class EmployeeFormController implements Initializable {
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        Pattern name = Pattern.compile("^[A-z|\\s]{3,}$");
-        Pattern number = Pattern.compile("^([+]94{1,3}|[0])([1-9]{2})([0-9]){7}$");
-
-        map.put(txtEmpName,name);
-        map.put(txtEmpMobile,number);
-
         setCellValueFactory();
         loadEmployeeTable();
         this.employeeList = getAllEmployee();

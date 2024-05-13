@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.Member;
 import lk.ijse.gymGenius.repository.MemberRepo;
 import lk.ijse.gymGenius.tm.MemberTm;
+import lk.ijse.gymGenius.util.DataValidateController;
 import lk.ijse.gymGenius.util.ValidateUtil;
 
 import java.net.URL;
@@ -68,6 +69,19 @@ public class MemberFormController implements Initializable{
     @FXML
     private TextField txtName;
 
+
+    @FXML
+    private Label lblMAddress;
+
+    @FXML
+    private Label lblMemberName;
+
+    @FXML
+    private Label lblMemberGender;
+
+    @FXML
+    private Label lblMemberMobile;
+
     MemberRepo memberRepo = new MemberRepo();
 
     private List<Member> memberList = new ArrayList<>();
@@ -116,14 +130,38 @@ public class MemberFormController implements Initializable{
 
         Member member = new Member(id,name,address,mobile,dob,gender);
 
-        try {
-            boolean isSaved = MemberRepo.saveMember(member);
-            if (isSaved){
-                new Alert(Alert.AlertType.CONFIRMATION,"Member saved").show();
-                loadMemberTable();
+        if (DataValidateController.validateMemberGender(txtGender.getText())) {
+            lblMemberGender.setText(" ");
+
+            if (DataValidateController.validateMemberMobile(txtMobileNo.getText())) {
+                lblMemberMobile.setText(" ");
+
+                if (DataValidateController.validateMemberAddress(txtAddress.getText())) {
+                    lblMAddress.setText(" ");
+
+                    if (DataValidateController.validateMemberName(txtName.getText())) {
+                        lblMemberName.setText(" ");
+
+                        try {
+                            boolean isSaved = MemberRepo.saveMember(member);
+                            if (isSaved) {
+                                new Alert(Alert.AlertType.CONFIRMATION, "Member saved").show();
+                                loadMemberTable();
+                            }
+                        } catch (SQLException e) {
+                            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                        }
+                    } else {
+                        lblMemberName.setText("Invalid Name");
+                    }
+                } else {
+                    lblMAddress.setText("Invalid Address");
+                }
+            } else {
+                lblMemberMobile.setText("Invalid Mobile");
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        } else {
+            lblMemberGender.setText("Invalid Gender");
         }
     }
     private void setCellValueFactory() {
@@ -199,13 +237,6 @@ public class MemberFormController implements Initializable{
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
-
-        Pattern name = Pattern.compile("^[A-z|\\s]{3,}$");
-        Pattern number = Pattern.compile("^([+]94{1,3}|[0])([1-9]{2})([0-9]){7}$");
-
-        map.put(txtName,name);
-        map.put(txtMobileNo,number);
-
         setCellValueFactory();
         loadMemberTable();
         this.memberList = getAllMember();
