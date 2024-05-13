@@ -14,7 +14,7 @@ create table employee(
 ID varchar(10)primary key,
 EmpName varchar(30)not null,
 Address varchar(30)not null,
-Mobile varchar(10),
+Mobile varchar(15),
 EmpRole varchar(50)not null,
 UserID varchar(10),
 FOREIGN KEY (UserID) REFERENCES user(ID)on update cascade on delete cascade
@@ -38,7 +38,7 @@ create table member(
 ID varchar(10)primary key,
 Name varchar(30),
 Address varchar(30),
-Mobile varchar(10),
+Mobile varchar(15),
 DOB date,
 Gender varchar(10)
 );

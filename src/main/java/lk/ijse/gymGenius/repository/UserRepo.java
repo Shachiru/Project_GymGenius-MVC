@@ -1,7 +1,9 @@
 package lk.ijse.gymGenius.repository;
 
+import lk.ijse.gymGenius.controller.LoginFormController;
 import lk.ijse.gymGenius.db.DbConnection;
 import lk.ijse.gymGenius.model.User;
+import lk.ijse.gymGenius.util.DataValidateController;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

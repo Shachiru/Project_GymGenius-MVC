@@ -14,7 +14,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#14213d" height="890.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="240.0" />
       <Pane blendMode="SCREEN" layoutY="241.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnHome" alignment="CENTER" buttonType="RAISED" onAction="#btnHomeOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="Home" textAlignment="CENTER" textFill="#fca311">
+            <JFXButton fx:id="btnHome" alignment="CENTER" buttonType="RAISED" onAction="#btnHomeOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="Home" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -31,7 +31,7 @@
       </Pane>
       <Pane layoutY="293.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnMembers" alignment="CENTER" buttonType="RAISED" onAction="#btnMembersOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="     Members" textAlignment="CENTER" textFill="#fca311">
+            <JFXButton fx:id="btnMembers" alignment="CENTER" buttonType="RAISED" onAction="#btnMembersOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="     Members" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -48,7 +48,7 @@
       </Pane>
       <Pane layoutY="345.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnEmp" alignment="CENTER" buttonType="RAISED" onAction="#btnEmpOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="       Employees" textAlignment="CENTER" textFill="#fca311">
+            <JFXButton fx:id="btnEmp" alignment="CENTER" buttonType="RAISED" onAction="#btnEmpOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="       Employees" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -65,7 +65,7 @@
       </Pane>
       <Pane layoutY="397.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnSupplement" alignment="CENTER" buttonType="RAISED" onAction="#btnSupplementOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="         Supplement" textFill="#fca311">
+            <JFXButton fx:id="btnSupplement" alignment="CENTER" buttonType="RAISED" onAction="#btnSupplementOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="         Supplement" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -82,7 +82,7 @@
       </Pane>
       <Pane layoutY="449.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
          <children>
-            <JFXButton fx:id="btnShop" alignment="CENTER" buttonType="RAISED" onAction="#btnShopOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="Shop" textFill="#fca311">
+            <JFXButton fx:id="btnShop" alignment="CENTER" buttonType="RAISED" onAction="#btnShopOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="Shop" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -97,30 +97,13 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="43.0" layoutY="546.0" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30;">
-         <children>
-            <JFXButton fx:id="btnSalary" buttonType="RAISED" onAction="#btnSalaryOnAction" prefHeight="52.0" prefWidth="184.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="   Salary" textFill="#d0fd1d">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="12.0">
-               <image>
-                  <Image url="@../asserts/icons/salaryIcon.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane fx:id="pagingPane" layoutX="240.0" prefHeight="890.0" prefWidth="1235.0" style="-fx-background-color: E5E5E5; -fx-border-image-width: 0;" />
-      <JFXButton fx:id="btnLogout" alignment="CENTER" buttonType="RAISED" layoutX="103.0" layoutY="823.0" onAction="#btnLogoutOnAction" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: FCA311; -fx-background-radius: 20;" text="      Log Out">
+      <Pane id="pagingPane" fx:id="pagingPane" layoutX="240.0" prefHeight="890.0" prefWidth="1235.0" style="-fx-border-image-width: 0;" styleClass="pagingPane" stylesheets="@../values/style.css" />
+      <JFXButton fx:id="btnLogout" alignment="CENTER" buttonType="RAISED" layoutX="73.0" layoutY="825.0" onAction="#btnLogoutOnAction" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: FCA311; -fx-background-radius: 20;" text="      Log Out">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="110.0" layoutY="828.0">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="80.0" layoutY="829.0">
          <image>
             <Image url="@../asserts/icons/logoutIcon.png" />
          </image>

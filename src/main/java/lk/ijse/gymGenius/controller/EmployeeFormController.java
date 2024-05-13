@@ -14,6 +14,7 @@ import lk.ijse.gymGenius.model.Employee;
 import lk.ijse.gymGenius.model.User;
 import lk.ijse.gymGenius.repository.EmployeeRepo;
 import lk.ijse.gymGenius.tm.EmployeeTm;
+import lk.ijse.gymGenius.util.DataValidateController;
 import lk.ijse.gymGenius.util.ValidateUtil;
 
 import java.net.URL;
@@ -61,6 +62,18 @@ public class EmployeeFormController implements Initializable {
 
     @FXML
     private TextField txtEmpRole;
+
+    @FXML
+    private Label lblAddress;
+
+    @FXML
+    private Label lblMobile;
+
+    @FXML
+    private Label lblName;
+
+    @FXML
+    private Label lblRole;
 
     EmployeeRepo employeeRepo = new EmployeeRepo();
 
@@ -161,14 +174,38 @@ public class EmployeeFormController implements Initializable {
 
         Employee employee = new Employee(id, name, address, mobile, role, userId);
 
-        try {
-            boolean isSaved = EmployeeRepo.saveEmployee(employee);
-            if (isSaved){
-                new Alert(Alert.AlertType.CONFIRMATION, "Employee saved").show();
-                loadEmployeeTable();
+        if (DataValidateController.validateEmpRole(txtEmpRole.getText())) {
+            lblRole.setText("");
+
+            if (DataValidateController.validateEmpAddress(txtEmpAddress.getText())) {
+                lblAddress.setText("");
+
+                if (DataValidateController.validateEmpMobile(txtEmpMobile.getText())) {
+                    lblMobile.setText("");
+
+                    if (DataValidateController.validateEmpName(txtEmpName.getText())) {
+                        lblName.setText("");
+
+                        try {
+                            boolean isSaved = EmployeeRepo.saveEmployee(employee);
+                            if (isSaved) {
+                                new Alert(Alert.AlertType.CONFIRMATION, "Employee saved").show();
+                                loadEmployeeTable();
+                            }
+                        } catch (SQLException e) {
+                            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+                        }
+                    } else {
+                        lblName.setText("Invalid Name");
+                    }
+                } else {
+                    lblMobile.setText("Invalid Mobile");
+                }
+            } else {
+                lblAddress.setText("Invalid Address");
             }
-        }catch (SQLException e) {
-           new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } else {
+            lblRole.setText("Invalid Role");
         }
     }
 

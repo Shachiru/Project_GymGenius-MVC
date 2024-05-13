@@ -23,8 +23,8 @@ public class DashboardFormController implements Initializable {
     @FXML
     private JFXButton btnMembers;
 
-    @FXML
-    private JFXButton btnSalary;
+    /*@FXML
+    private JFXButton btnSalary;*/
 
     @FXML
     private JFXButton btnShop;
@@ -57,10 +57,10 @@ public class DashboardFormController implements Initializable {
         Navigation.switchPaging(pagingPane,"member_form.fxml");
     }
 
-    @FXML
+    /*@FXML
     void btnSalaryOnAction(ActionEvent event) throws IOException {
         Navigation.switchPaging(pagingPane,"salary_form.fxml");
-    }
+    }*/
 
     @FXML
     void btnShopOnAction(ActionEvent event) throws IOException {

@@ -35,7 +35,7 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label id="lblPassword" fx:id="lblPassword" layoutX="806.0" layoutY="398.0" styleClass="lblPassword" stylesheets="@../values/style.css" text="Password" textFill="WHITE">
+      <Label id="lblPassword" fx:id="lblPassword" layoutX="806.0" layoutY="423.0" styleClass="lblPassword" stylesheets="@../values/style.css" text="Password" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Label>
@@ -47,17 +47,19 @@
                </font></TextField>
          </children>
       </HBox>
-      <HBox alignment="CENTER_RIGHT" layoutX="795.0" layoutY="428.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: E5E5E5; -fx-background-radius: 30;">
+      <HBox alignment="CENTER_RIGHT" layoutX="795.0" layoutY="452.0" prefHeight="46.0" prefWidth="338.0" style="-fx-background-color: E5E5E5; -fx-background-radius: 30;">
          <children>
             <PasswordField id="txtPw" fx:id="txtPw" prefHeight="46.0" prefWidth="308.0" promptText="Password" style="-fx-background-color: E5E5E5; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-width: 0;" styleClass="txtPw" stylesheets="@../values/style.css" />
          </children>
       </HBox>
       <Label id="lblSince" layoutX="49.0" layoutY="684.0" prefHeight="39.0" prefWidth="76.0" styleClass="lblSince" stylesheets="@../values/style.css" text="Since 2019" textFill="WHITE" />
-      <Hyperlink fx:id="hyperSignUp" layoutX="1064.0" layoutY="491.0" onAction="#linkSignUpOnAction" text="Sign Up" underline="true" />
+      <Hyperlink fx:id="hyperSignUp" layoutX="1065.0" layoutY="534.0" onAction="#linkSignUpOnAction" text="Sign Up" underline="true" />
       <ImageView fitHeight="240.0" fitWidth="240.0" layoutX="844.0" layoutY="50.0">
          <image>
             <Image url="@../asserts/logo/GymGenius.png" />
          </image>
       </ImageView>
+      <Label id="lblUsernameValidate" fx:id="lblUsernameValidate" layoutX="811.0" layoutY="391.0" prefHeight="18.0" prefWidth="308.0" styleClass="lblUsernameValidate" stylesheets="@../values/style.css" textFill="RED" />
+      <Label id="lblPasswordValidate" fx:id="lblPasswordValidate" layoutX="810.0" layoutY="504.0" prefHeight="18.0" prefWidth="308.0" styleClass="lblPasswordValidate" stylesheets="@../values/style.css" textFill="RED" />
    </children>
 </AnchorPane>

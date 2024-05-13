@@ -6,15 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.gymGenius.repository.UserRepo;
+import lk.ijse.gymGenius.util.DataValidateController;
 import lk.ijse.gymGenius.util.Navigation;
 
 import java.io.IOException;
@@ -48,6 +46,12 @@ public class LoginFormController {
     @FXML
     private TextField txtUserName;
 
+    @FXML
+    private Label lblUsernameValidate;
+
+    @FXML
+    private Label lblPasswordValidate;
+
     /*@FXML
     private ImageView imgPower;
 
@@ -59,11 +63,18 @@ public class LoginFormController {
     @FXML
     void btnLoginOnAction(ActionEvent event) {
         if (UserRepo.verifyCredentials(txtUserName.getText(), txtPw.getText())){
+
+          /*if (DataValidateController.validateName(txtUserName.getText())) {
+                lblUsernameValidate.setText("");*/
+
             try {
                 Navigation.switchNavigation("dashboard_form.fxml",event);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            /*} else{
+                lblUsernameValidate.setText("Invalid Username");
+            }*/
         }
     }
 

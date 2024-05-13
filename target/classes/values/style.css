@@ -38,3 +38,15 @@
     -fx-text-fill: black;
     -fx-font-size: 16px;
 }
+.lblTime{
+    -fx-text-fill: #14213d;
+}
+.pagingPane{
+    -fx-background-color: #E5E5E5;
+}
+.lblPasswordValidate{
+    -fx-text-fill: red;
+}
+.lblUsernameValidate{
+    -fx-text-fill: red;
+}

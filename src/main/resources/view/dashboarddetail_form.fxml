@@ -5,15 +5,20 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #636e72; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardDetailFormController">
+<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1235.0" style="-fx-background-color: E5E5E5; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardDetailFormController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d3436" height="790.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1176.0" />
-      <Pane layoutX="160.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+      <ImageView fitHeight="896.0" fitWidth="1235.0" layoutX="-1.0" layoutY="-3.0" opacity="0.4">
+         <image>
+            <Image url="@../asserts/images/Supplements1.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="42.0" layoutY="77.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-color: FCA311; -fx-border-radius: 25; -fx-border-width: 10;">
          <children>
             <Text layoutX="26.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members Count" wrappingWidth="131.13671875">
                <font>
@@ -26,7 +31,7 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="500.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+      <Pane layoutX="292.0" layoutY="77.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-radius: 25; -fx-border-color: FCA311; -fx-border-width: 10;">
          <children>
             <Text layoutX="33.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trainers Count" wrappingWidth="118.13671875">
                <font>
@@ -39,42 +44,34 @@
                </font></Label>
          </children>
       </Pane>
-      <Pane layoutX="840.0" layoutY="128.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30;">
+      <Pane layoutX="547.0" layoutY="70.0" prefHeight="123.0" prefWidth="184.0" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-radius: 25; -fx-border-width: 10; -fx-border-color: FCA311;">
          <children>
             <Text layoutX="21.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplements QTY" wrappingWidth="142.13671875">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Text>
-            <Label fx:id="lblSupplements" alignment="CENTER" layoutX="37.0" layoutY="57.0" prefHeight="52.0" prefWidth="109.0" />
+            <Label fx:id="lblSupplements" alignment="CENTER" layoutX="38.0" layoutY="50.0" prefHeight="52.0" prefWidth="109.0" />
          </children>
       </Pane>
-      <Pane layoutX="42.0" layoutY="314.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: black; -fx-background-radius: 20;">
-         <children>
-            <PieChart fx:id="pieChart" prefHeight="500.0" prefWidth="500.0" title="pieChart" />
-         </children>
-      </Pane>
-      <Pane layoutX="615.0" layoutY="314.0" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: black; -fx-background-radius: 20;">
-         <children>
-            <BarChart fx:id="barChart" prefHeight="500.0" prefWidth="500.0" title="barChart">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </BarChart>
-         </children>
-      </Pane>
-      <Label fx:id="lblDate" layoutX="932.0" layoutY="63.0" prefHeight="17.0" prefWidth="154.0" text="Date" textFill="WHITE">
+      <Label fx:id="lblDate" layoutX="1048.0" layoutY="50.0" prefHeight="17.0" prefWidth="154.0" text="Date" textFill="#14213d">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblTime" layoutX="947.0" layoutY="23.0" prefHeight="17.0" prefWidth="154.0" text="Time" textFill="WHITE">
+      <Label id="lblTime" fx:id="lblTime" layoutX="1048.0" layoutY="14.0" prefHeight="17.0" prefWidth="154.0" styleClass="lblTime" stylesheets="@../values/style.css" text="Time" textFill="#14213d">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <BarChart fx:id="barChart" layoutX="42.0" layoutY="489.0" prefHeight="263.0" prefWidth="313.0" title="barChart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <PieChart fx:id="pieChart" layoutX="42.0" layoutY="230.0" prefHeight="215.0" prefWidth="244.0" title="pieChart" />
    </children>
 </Pane>

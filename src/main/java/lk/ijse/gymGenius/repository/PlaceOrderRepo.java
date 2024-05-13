@@ -14,10 +14,13 @@ public class PlaceOrderRepo {
         try {
             boolean isOrderSaved = OrderRepo.saveOrder(placeOrder.getOrder());
             if (isOrderSaved) {
+
                 boolean isOrderDetailSaved = OrderDetailRepo.saveOrderDetails(placeOrder.getOrderDetail());
                 if (isOrderDetailSaved) {
+
                     boolean isSupplementUpdated = SupplementRepo.updateSupplementQty(placeOrder.getOrderDetail());
                     if (isSupplementUpdated) {
+
                         connection.commit();
                         return true;
                     }
