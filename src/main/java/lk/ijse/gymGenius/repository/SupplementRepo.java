@@ -1,5 +1,8 @@
 package lk.ijse.gymGenius.repository;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.XYChart;
 import lk.ijse.gymGenius.db.DbConnection;
 import lk.ijse.gymGenius.model.OrderDetail;
 import lk.ijse.gymGenius.model.Supplement;
@@ -105,6 +108,29 @@ public class SupplementRepo {
         pstm.setString(2,od.getSupplement_id());
 
         return pstm.executeUpdate() > 0;
+    }
+
+    public static ObservableList<XYChart.Series<String, Integer>> getDataToBarChart() throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql="SELECT Description,Qty FROM supplements ";
+
+        ObservableList<XYChart.Series<String, Integer>> datalist = FXCollections.observableArrayList();
+
+        PreparedStatement pstm= connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        // Creating a new series object
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
+
+        while(resultSet.next()){
+            String itemName = resultSet.getString("Description");
+            int itemQty = resultSet.getInt("Qty");
+            series.getData().add(new XYChart.Data<>(itemName, itemQty));
+        }
+
+        datalist.add(series);
+        return datalist;
     }
 
     public boolean deleteSupplement(String id) throws SQLException {

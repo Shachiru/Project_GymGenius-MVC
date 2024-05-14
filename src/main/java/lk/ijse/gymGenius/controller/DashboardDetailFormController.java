@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.DashboardDetail;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class DashboardDetailFormController {
+
 
     @FXML
     private Label lblDate;
@@ -43,33 +45,43 @@ public class DashboardDetailFormController {
     private PieChart pieChart;
 
     @FXML
-    private BarChart<?, ?> barChart;
+    private BarChart<String, Integer> barChart;
 
     DashboardDetail dashboardDetail = new DashboardDetail();
+    SupplementRepo supplementRepo = new SupplementRepo();
 
-    public void initialize() {
-        //setPieChart();
+    public void initialize() throws SQLException {
+        setPieChart();
+        setDataToBarChart();
         timenow();
         countMembers();
         countEmployee();
         countSupplement();
     }
 
+    public void setDataToBarChart() throws SQLException {
+        ObservableList<XYChart.Series<String, Integer>> barChartData = SupplementRepo.getDataToBarChart();
+
+        barChart.setData(barChartData);
+    }
+
     void setPieChart() throws SQLException {
 
-        /*try{
+        try {
             ObservableList<PieChart.Data> obList = FXCollections.observableArrayList();
-            ArrayList<PieChart.Data> data = DashboardDetail.getPieChartData();
-            for (PieChart.Data d : data) {
-                obList.add(d);
+            ArrayList<PieChart.Data> data =dashboardDetail.getPieChartData();
+            for (PieChart.Data datum : data) {
+                obList.add(datum);
             }
-            pieChart.getId().addAll(obList);
-            pieChart.setTitle("Most sell products");
+            pieChart.getData().addAll(obList);
+            pieChart.setTitle("Most Trending Products");
             pieChart.setStartAngle(180);
-        } catch (SQLException e) {
-            throwable.printStackTrace();
-        }*/
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
+
 
     private void timenow() {
         Thread thread = new Thread(() -> {
