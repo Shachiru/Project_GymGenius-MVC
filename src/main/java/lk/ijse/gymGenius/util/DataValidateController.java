@@ -22,7 +22,6 @@ public class DataValidateController {
     }
 
     ///////////////////          Employee         ///////////////////////
-
     public static boolean validateEmpName(String empName) {
         String nameRegex = "^[A-Z][a-z]*$";
             Pattern pattern = Pattern.compile(nameRegex);

@@ -126,4 +126,18 @@ public class SupplementRepo {
 
         return pstm.executeUpdate() > 0;
     }
+
+    public int countSupplement() throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "Select count(ID) as sup_count from supplements";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            int supCount = Integer.parseInt(resultSet.getString("sup_count"));
+            return supCount;
+        }
+        return Integer.parseInt(null);
+    }
 }

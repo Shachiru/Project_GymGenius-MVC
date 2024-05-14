@@ -98,16 +98,11 @@
          </children>
       </Pane>
       <Pane id="pagingPane" fx:id="pagingPane" layoutX="240.0" prefHeight="890.0" prefWidth="1235.0" style="-fx-border-image-width: 0;" styleClass="pagingPane" stylesheets="@../values/style.css" />
-      <JFXButton fx:id="btnLogout" alignment="CENTER" buttonType="RAISED" layoutX="73.0" layoutY="825.0" onAction="#btnLogoutOnAction" prefHeight="34.0" prefWidth="94.0" style="-fx-background-color: FCA311; -fx-background-radius: 20;" text="      Log Out">
+      <JFXButton fx:id="btnLogout" buttonType="RAISED" layoutX="37.0" layoutY="761.0" onAction="#btnLogoutOnAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #14213d;" text="Log Out" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="12.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="80.0" layoutY="829.0">
-         <image>
-            <Image url="@../asserts/icons/logoutIcon.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="240.0" fitWidth="240.0" layoutY="1.0">
          <image>
             <Image url="@../asserts/logo/GymGenius.png" />

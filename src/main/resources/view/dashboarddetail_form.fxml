@@ -5,9 +5,12 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -51,7 +54,10 @@
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Text>
-            <Label fx:id="lblSupplements" alignment="CENTER" layoutX="38.0" layoutY="50.0" prefHeight="52.0" prefWidth="109.0" />
+            <Label fx:id="lblSupplements" alignment="CENTER" layoutX="38.0" layoutY="50.0" prefHeight="52.0" prefWidth="109.0">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font></Label>
          </children>
       </Pane>
       <Label fx:id="lblDate" layoutX="1048.0" layoutY="50.0" prefHeight="17.0" prefWidth="154.0" text="Date" textFill="#14213d">
@@ -64,7 +70,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <BarChart fx:id="barChart" layoutX="42.0" layoutY="489.0" prefHeight="263.0" prefWidth="313.0" title="barChart">
+      <BarChart fx:id="barChart" layoutX="56.0" layoutY="511.0" prefHeight="307.0" prefWidth="340.0" title="barChart">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -72,6 +78,13 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <PieChart fx:id="pieChart" layoutX="42.0" layoutY="230.0" prefHeight="215.0" prefWidth="244.0" title="pieChart" />
+      <PieChart fx:id="pieChart" layoutX="56.0" layoutY="235.0" prefHeight="276.0" prefWidth="340.0" title="pieChart" />
+      <Rectangle arcHeight="5.0" fill="#13203b41" height="375.0" layoutX="640.0" layoutY="433.0" stroke="#13203b40" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="10.0" width="407.0" />
+      <TableView layoutX="674.0" layoutY="467.0" prefHeight="307.0" prefWidth="340.0">
+        <columns>
+          <TableColumn prefWidth="170.0" text="C1" />
+          <TableColumn prefWidth="170.0" text="C2" />
+        </columns>
+      </TableView>
    </children>
 </Pane>

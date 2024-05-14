@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 import lk.ijse.gymGenius.model.DashboardDetail;
 import lk.ijse.gymGenius.repository.EmployeeRepo;
 import lk.ijse.gymGenius.repository.MemberRepo;
+import lk.ijse.gymGenius.repository.SupplementRepo;
 
 import java.sql.SQLException;
 import java.sql.SQLOutput;
@@ -51,6 +52,7 @@ public class DashboardDetailFormController {
         timenow();
         countMembers();
         countEmployee();
+        countSupplement();
     }
 
     void setPieChart() throws SQLException {
@@ -91,6 +93,7 @@ public class DashboardDetailFormController {
         });
         thread.start();
     }
+
     void countMembers(){
         MemberRepo memberRepo = new MemberRepo();
 
@@ -102,7 +105,6 @@ public class DashboardDetailFormController {
             throwables.printStackTrace();
         }
     }
-
     void countEmployee(){
         EmployeeRepo employeeRepo = new EmployeeRepo();
 
@@ -115,5 +117,14 @@ public class DashboardDetailFormController {
         }
     }
 
+    private void countSupplement() {
+        SupplementRepo supplementRepo = new SupplementRepo();
 
+        try{
+            int count = supplementRepo.countSupplement();
+            lblSupplements.setText(String.valueOf("0"+count));
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+    }
 }

@@ -252,8 +252,6 @@ public class EmployeeFormController implements Initializable {
     void txtKeyOnReleased(KeyEvent event) {
         ValidateUtil.validation(map);
     }
-
-
 }
 
 
