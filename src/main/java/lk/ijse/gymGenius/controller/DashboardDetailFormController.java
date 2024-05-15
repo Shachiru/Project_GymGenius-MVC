@@ -15,16 +15,9 @@ import lk.ijse.gymGenius.repository.MemberRepo;
 import lk.ijse.gymGenius.repository.SupplementRepo;
 
 import java.sql.SQLException;
-import java.sql.SQLOutput;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class DashboardDetailFormController {
-
-
-    @FXML
-    private Label lblDate;
 
     @FXML
     private Label lblEmployeeCount;
@@ -34,9 +27,6 @@ public class DashboardDetailFormController {
 
     @FXML
     private Label lblSupplements;
-
-    @FXML
-    private Label lblTime;
 
     @FXML
     private Pane pagingPane;
@@ -53,7 +43,6 @@ public class DashboardDetailFormController {
     public void initialize() throws SQLException {
         setPieChart();
         setDataToBarChart();
-        timenow();
         countMembers();
         countEmployee();
         countSupplement();
@@ -80,30 +69,6 @@ public class DashboardDetailFormController {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
-
-
-    private void timenow() {
-        Thread thread = new Thread(() -> {
-            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-            SimpleDateFormat sdf1 = new SimpleDateFormat("MMMM,  dd, yyyy");
-            while (true) {
-                try {
-                    Thread.sleep(1000);
-
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
-                final String timenow = sdf.format(new Date());
-                String timenow1 = sdf1.format(new Date());
-
-                Platform.runLater(() -> {
-                    lblTime.setText(timenow);
-                    lblDate.setText(timenow1);
-                });
-            }
-        });
-        thread.start();
     }
 
     void countMembers(){

@@ -39,10 +39,10 @@
     -fx-font-size: 16px;
 }
 .lblTime{
-    -fx-text-fill: #14213d;
+    -fx-text-fill: #869BC1;
 }
 .pagingPane{
-    -fx-background-color: #E5E5E5;
+    -fx-background-color: #212936;
 }
 .lblPasswordValidate{
     -fx-text-fill: red;
