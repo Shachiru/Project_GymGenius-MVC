@@ -9,9 +9,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="890.0" prefWidth="1475.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardFormController">
+<AnchorPane fx:id="rootNode" prefHeight="1050.0" prefWidth="1680.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardFormController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#14213d" height="890.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="240.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#14213d" height="1050.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="240.0" />
       <Pane blendMode="SCREEN" layoutY="241.0" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30;">
          <children>
             <JFXButton fx:id="btnHome" alignment="CENTER" buttonType="RAISED" onAction="#btnHomeOnAction" prefHeight="52.0" prefWidth="240.0" style="-fx-background-radius: 30; -fx-border-radius: 20;" text="Home" textAlignment="CENTER" textFill="WHITE">
@@ -97,7 +97,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane id="pagingPane" fx:id="pagingPane" layoutX="240.0" prefHeight="890.0" prefWidth="1235.0" style="-fx-border-image-width: 0;" styleClass="pagingPane" stylesheets="@../values/style.css" />
+      <Pane id="pagingPane" fx:id="pagingPane" layoutX="240.0" prefHeight="1050.0" prefWidth="1440.0" style="-fx-border-image-width: 0;" styleClass="pagingPane" stylesheets="@../values/style.css" />
       <JFXButton fx:id="btnLogout" buttonType="RAISED" layoutX="37.0" layoutY="761.0" onAction="#btnLogoutOnAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #14213d;" text="Log Out" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />

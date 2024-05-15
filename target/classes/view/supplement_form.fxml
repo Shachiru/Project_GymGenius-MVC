@@ -8,64 +8,62 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1176.0" style="-fx-background-color: #636e72; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.SupplementFormController">
+<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1050.0" prefWidth="1440.0" style="-fx-background-color: #E5E5E5;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.SupplementFormController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d3436" height="790.0" layoutY="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1176.0" />
-      <Text fill="WHITE" layoutX="37.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplement Details">
+      <Text layoutX="583.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplement Details" textAlignment="CENTER">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="36.0" />
          </font>
       </Text>
       <TextField alignment="CENTER" layoutX="748.0" layoutY="119.0" prefHeight="39.0" prefWidth="236.0" promptText="search by name" style="-fx-background-color: white; -fx-background-radius: 30;" />
-      <TextField fx:id="txtSupplementId" layoutX="78.0" layoutY="230.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtSupplementId" layoutX="78.0" layoutY="230.0" prefHeight="35.0" prefWidth="379.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#d0fd1d" layoutX="78.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplement ID:" wrappingWidth="116.421875">
+      <Text layoutX="78.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplement ID:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtProductName" layoutX="78.0" layoutY="337.0" prefHeight="35.0" prefWidth="379.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtProductName" layoutX="78.0" layoutY="337.0" prefHeight="35.0" prefWidth="379.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#d0fd1d" layoutX="78.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name:" wrappingWidth="116.421875">
+      <Text layoutX="78.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtUnitPrice" layoutX="686.0" layoutY="213.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtUnitPrice" layoutX="686.0" layoutY="213.0" prefHeight="35.0" prefWidth="282.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#d0fd1d" layoutX="686.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="116.421875">
+      <Text layoutX="686.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtQty" layoutX="678.0" layoutY="310.0" prefHeight="35.0" prefWidth="282.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="txtQty" layoutX="678.0" layoutY="310.0" prefHeight="35.0" prefWidth="282.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#d0fd1d" layoutX="686.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" wrappingWidth="116.421875">
+      <Text layoutX="686.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty:" wrappingWidth="116.421875">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="tblSupplement" layoutX="150.0" layoutY="436.0" onMouseClicked="#supplementTableClick" prefHeight="423.0" prefWidth="847.0">
+      <TableView fx:id="tblSupplement" layoutX="228.0" layoutY="451.0" onMouseClicked="#supplementTableClick" prefHeight="450.0" prefWidth="1000.0">
         <columns>
-          <TableColumn fx:id="colSupplementId" prefWidth="143.0" text="ID" />
-          <TableColumn fx:id="colProductName" prefWidth="317.0" text="Product Name" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="243.0" text="Unit Price" />
-            <TableColumn fx:id="colQty" prefWidth="143.0" text="Qty" />
+          <TableColumn fx:id="colSupplementId" prefWidth="199.0" text="ID" />
+          <TableColumn fx:id="colProductName" prefWidth="414.0" text="Product Name" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="182.0" text="Unit Price" />
+            <TableColumn fx:id="colQty" prefWidth="204.0" text="Qty" />
         </columns>
       </TableView>
-      <JFXButton contentDisplay="RIGHT" layoutX="457.0" layoutY="381.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 30;" text="Clear">
+      <JFXButton contentDisplay="RIGHT" layoutX="457.0" layoutY="381.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #14213D;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -77,7 +75,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton contentDisplay="RIGHT" layoutX="589.0" layoutY="381.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 30;" text="Delete">
+      <JFXButton contentDisplay="RIGHT" layoutX="589.0" layoutY="381.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #14213D;" text="Delete" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -89,7 +87,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton contentDisplay="RIGHT" layoutX="728.0" layoutY="381.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 30;" text="Update">
+      <JFXButton contentDisplay="RIGHT" layoutX="728.0" layoutY="381.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #14213D;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -101,7 +99,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton contentDisplay="RIGHT" layoutX="859.0" layoutY="381.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #d0fd1d; -fx-background-radius: 30;" text="Save">
+      <JFXButton contentDisplay="RIGHT" layoutX="859.0" layoutY="381.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #14213D;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

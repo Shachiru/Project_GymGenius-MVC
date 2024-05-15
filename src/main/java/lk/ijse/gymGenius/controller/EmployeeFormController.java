@@ -188,7 +188,7 @@ public class EmployeeFormController implements Initializable {
                         } catch (SQLException e) {
                             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
                         }
-                    } else {
+                    }  else {
                         lblName.setText("Invalid Name");
                     }
                 } else {

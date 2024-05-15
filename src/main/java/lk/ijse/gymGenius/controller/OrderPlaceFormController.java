@@ -22,6 +22,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -67,13 +68,13 @@ public class OrderPlaceFormController implements Initializable {
     private TableView<OrderTm> tblShopCart;
 
     @FXML
-    private TextField txtDescription;
+    private Label lblDescription;
 
     @FXML
-    private TextField txtMemberName;
+    private Label lblMemberName;
 
     @FXML
-    private TextField txtOrderDate;
+    private Label lblOrderDate;
 
     @FXML
     private TextField txtOrderId;
@@ -82,13 +83,13 @@ public class OrderPlaceFormController implements Initializable {
     private TextField txtQty;
 
     @FXML
-    private TextField txtQtyOnHand;
+    private Label lblQtyOnHand;
 
     @FXML
     private TextField txtTotal;
 
     @FXML
-    private TextField txtUnitPrice;
+    private Label lblUnitPrice;
 
     private ObservableList<OrderTm> cartList = FXCollections.observableArrayList();
     private double netTotal = 0;
@@ -117,7 +118,7 @@ public class OrderPlaceFormController implements Initializable {
 
     private void setDate() {
         LocalDate now = LocalDate.now();
-        txtOrderDate.setText(String.valueOf(now));
+        lblOrderDate.setText(String.valueOf(now));
     }
 
     private void getSupplementId() {
@@ -139,7 +140,7 @@ public class OrderPlaceFormController implements Initializable {
         String memberId = cmbMemberId.getValue();
         try {
             Member member = MemberRepo.searchMember(memberId);
-            txtMemberName.setText(member.getName());
+            lblMemberName.setText(member.getName());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -148,14 +149,14 @@ public class OrderPlaceFormController implements Initializable {
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
         String supplementId = cmbSupplementId.getValue();
-        String desc = txtDescription.getText();
-        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        String desc = lblDescription.getText();
+        double unitPrice = Double.parseDouble(lblUnitPrice.getText());
         int qty = Integer.parseInt(txtQty.getText());
         double total = qty * unitPrice;
         JFXButton btnRemove = new JFXButton("Remove");
         btnRemove.setCursor(Cursor.HAND);
 
-        btnRemove.setOnAction((e) ->{
+        btnRemove.setOnAction((e) -> {
             ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
             ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
 
@@ -170,8 +171,8 @@ public class OrderPlaceFormController implements Initializable {
             }
         });
 
-        for (int i=0; i<tblShopCart.getItems().size(); i++){
-            if (supplementId.equals(colSupplementId.getCellData(i))){
+        for (int i = 0; i < tblShopCart.getItems().size(); i++) {
+            if (supplementId.equals(colSupplementId.getCellData(i))) {
                 qty += cartList.get(i).getQty();
                 total = unitPrice * qty;
 
@@ -204,14 +205,14 @@ public class OrderPlaceFormController implements Initializable {
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
         String orderId = txtOrderId.getText();
-        Date date = Date.valueOf(txtOrderDate.getText());
+        Date date = Date.valueOf(lblOrderDate.getText());
         String memberId = cmbMemberId.getValue();
 
         double orderAmount = 0;
-        Order order = new Order(orderId,date,memberId);
-        List<OrderDetail>orderList = new ArrayList<>();
+        Order order = new Order(orderId, date, memberId);
+        List<OrderDetail> orderList = new ArrayList<>();
 
-        for (int i = 0; i < tblShopCart.getItems().size();i++) {
+        for (int i = 0; i < tblShopCart.getItems().size(); i++) {
             OrderTm orderTm = cartList.get(i);
 
             OrderDetail orderDetail = new OrderDetail(
@@ -219,22 +220,36 @@ public class OrderPlaceFormController implements Initializable {
                     orderTm.getSupplement_id(),
                     orderTm.getQty(),
                     orderTm.getUnitPrice(),
-                    orderTm.getQty()*orderTm.getUnitPrice()
+                    orderTm.getQty() * orderTm.getUnitPrice()
             );
             orderList.add(orderDetail);
         }
-            PlaceOrder placeOrder = new PlaceOrder(order,orderList);
+        PlaceOrder placeOrder = new PlaceOrder(order, orderList);
 
-            try {
-                boolean isOrderPlaced =  PlaceOrderRepo.orderPlaced(placeOrder);
-                if(isOrderPlaced){
-                    new Alert(Alert.AlertType.CONFIRMATION," Order Places Successfully").show();
-                }else{
-                    new Alert(Alert.AlertType.WARNING,"Something went Wrong").show();
+        try {
+            boolean isOrderPlaced = PlaceOrderRepo.orderPlaced(placeOrder);
+            if (isOrderPlaced) {
+                ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+                ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
+                Optional<ButtonType> result = new Alert(Alert.AlertType.CONFIRMATION, "Order Successfully.. Do you want print a bill ?", yes, no).showAndWait();
+
+                if (result.orElse(no) == yes) {
+                    Map<String, Object> parameters = new HashMap<>();
+                    InputStream resource = this.getClass().getResourceAsStream("/view/reports/PlaceOrder.jrxml");
+                    try {
+                        JasperReport jasperReport = JasperCompileManager.compileReport(resource);
+                        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+                        JasperViewer.viewReport(jasperPrint, false);
+                    } catch (JRException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-            } catch (SQLException e) {
-                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Something went Wrong").show();
             }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
     @FXML
@@ -243,9 +258,9 @@ public class OrderPlaceFormController implements Initializable {
         try {
             Supplement supplement = SupplementRepo.searchSupplement(supplementId);
             if (supplement != null) {
-                txtDescription.setText(supplement.getProductName());
-                txtUnitPrice.setText(supplement.getUnitPrice());
-                txtQtyOnHand.setText(supplement.getQty());
+                lblDescription.setText(supplement.getProductName());
+                lblUnitPrice.setText(supplement.getUnitPrice());
+                lblQtyOnHand.setText(supplement.getQty());
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -264,29 +279,6 @@ public class OrderPlaceFormController implements Initializable {
             cmbMemberId.setItems(memberList);
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-
-    @FXML
-    void btnPrintBillOnAction(ActionEvent event) {
-
-        HashMap hashMap = new HashMap<>();
-        hashMap.put("Order Id",txtOrderId.getText());
-        hashMap.put("id" , cmbMemberId.getValue());
-        hashMap.put("Name" , txtMemberName.getText());
-        hashMap.put("supplement" , txtDescription.getText());
-        hashMap.put("unitPrice" , txtUnitPrice.getText());
-        hashMap.put("qty" , txtQty.getText());
-        hashMap.put("total" , txtTotal.getText());
-
-        try {
-            JasperDesign load = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/reports/PlaceOrder.jrxml"));
-            JasperReport jasperReport = JasperCompileManager.compileReport(load);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hashMap, new JREmptyDataSource());
-            JasperViewer.viewReport(jasperPrint,false);
-        } catch (JRException e) {
             throw new RuntimeException(e);
         }
     }

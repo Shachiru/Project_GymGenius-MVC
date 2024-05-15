@@ -11,9 +11,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1235.0" style="-fx-background-color: E5E5E5; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardDetailFormController">
+<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1050.0" prefWidth="1440.0" style="-fx-background-color: E5E5E5; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.DashboardDetailFormController">
    <children>
-      <ImageView fitHeight="896.0" fitWidth="1235.0" layoutX="-1.0" layoutY="-3.0" opacity="0.4">
+      <ImageView fitHeight="1050.0" fitWidth="1440.0" layoutX="-1.0" layoutY="-3.0" opacity="0.4">
          <image>
             <Image url="@../asserts/images/Supplements1.jpg" />
          </image>
@@ -67,7 +67,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <BarChart fx:id="barChart" layoutX="618.0" layoutY="280.0" prefHeight="502.0" prefWidth="545.0" title="barChart">
+      <BarChart fx:id="barChart" layoutX="742.0" layoutY="318.0" prefHeight="650.0" prefWidth="650.0" title="barChart">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -75,6 +75,6 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <PieChart fx:id="pieChart" layoutX="78.0" layoutY="300.0" prefHeight="462.0" prefWidth="493.0" title="pieChart" />
+      <PieChart fx:id="pieChart" layoutX="42.0" layoutY="318.0" prefHeight="650.0" prefWidth="650.0" title="pieChart" />
    </children>
 </Pane>
