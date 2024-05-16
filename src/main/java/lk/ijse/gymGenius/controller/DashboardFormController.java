@@ -27,9 +27,6 @@ public class DashboardFormController implements Initializable {
     @FXML
     private JFXButton btnMembers;
 
-    /*@FXML
-    private JFXButton btnSalary;*/
-
     @FXML
     private JFXButton btnShop;
 
@@ -68,11 +65,6 @@ public class DashboardFormController implements Initializable {
         Navigation.switchPaging(pagingPane,"member_form.fxml");
     }
 
-    /*@FXML
-    void btnSalaryOnAction(ActionEvent event) throws IOException {
-        Navigation.switchPaging(pagingPane,"salary_form.fxml");
-    }*/
-
     @FXML
     void btnShopOnAction(ActionEvent event) throws IOException {
         Navigation.switchPaging(pagingPane,"order_form.fxml");
@@ -90,7 +82,7 @@ public class DashboardFormController implements Initializable {
     private void timeNow() {
         Thread thread = new Thread(() -> {
             SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-            SimpleDateFormat sdf1 = new SimpleDateFormat("MMMM,  dd, yyyy");
+            SimpleDateFormat sdf1 = new SimpleDateFormat("MMMM, dd, yyyy");
             while (true) {
                 try {
                     Thread.sleep(1000);
@@ -98,12 +90,12 @@ public class DashboardFormController implements Initializable {
                 } catch (Exception e) {
                     System.out.println(e);
                 }
-                final String timenow = sdf.format(new Date());
-                String timenow1 = sdf1.format(new Date());
+                final String timeNow = sdf.format(new Date());
+                String timeNow1 = sdf1.format(new Date());
 
                 Platform.runLater(() -> {
-                    lblTime.setText(timenow);
-                    lblDate.setText(timenow1);
+                    lblTime.setText(timeNow);
+                    lblDate.setText(timeNow1);
                 });
             }
         });

@@ -100,6 +100,7 @@ public class DashboardDetailFormController {
         try{
             int count = supplementRepo.countSupplement();
             lblSupplements.setText(String.valueOf("0"+count));
+
         }catch (SQLException throwables){
             throwables.printStackTrace();
         }

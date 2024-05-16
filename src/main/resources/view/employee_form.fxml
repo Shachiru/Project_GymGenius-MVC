@@ -30,11 +30,11 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <TextField fx:id="txtEmpMobile" layoutX="605.0" layoutY="115.0" onKeyReleased="#txtKeyOnReleased" prefHeight="35.0" prefWidth="379.0">
+      <TextField fx:id="txtEmpMobile" layoutX="770.0" layoutY="115.0" onKeyReleased="#txtKeyOnReleased" prefHeight="35.0" prefWidth="379.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <TextField fx:id="txtEmpRole" layoutX="605.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0">
+      <TextField fx:id="txtEmpRole" layoutX="770.0" layoutY="195.0" prefHeight="35.0" prefWidth="379.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
@@ -53,17 +53,17 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text fill="#869bc1" layoutX="615.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile No">
+      <Text fill="#869bc1" layoutX="775.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile No">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text fill="#869bc1" layoutX="615.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
+      <Text fill="#869bc1" layoutX="775.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="tblEmployee" layoutX="105.0" layoutY="405.0" onMouseClicked="#empTableClick" prefHeight="450.0" prefWidth="1000.0">
+      <TableView fx:id="tblEmployee" layoutX="218.0" layoutY="418.0" onMouseClicked="#empTableClick" prefHeight="450.0" prefWidth="1000.0">
         <columns>
           <TableColumn fx:id="colEmpId" prefWidth="150.0" text="ID" />
           <TableColumn fx:id="colEmpName" prefWidth="200.0" text="Name" />
@@ -72,7 +72,7 @@
             <TableColumn fx:id="colEmpRole" minWidth="0.0" prefWidth="169.0" text="Role" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="490.0" layoutY="340.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Clear  " textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="529.0" layoutY="340.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Clear  " textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -84,7 +84,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="650.0" layoutY="340.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Delete " textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="718.0" layoutY="340.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Delete " textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -96,7 +96,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="810.0" layoutY="340.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Update " textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="901.0" layoutY="340.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Update " textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -108,7 +108,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="970.0" layoutY="340.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Save  " textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="1089.0" layoutY="340.0" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Save  " textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -122,7 +122,7 @@
       </JFXButton>
       <Label fx:id="lblName" layoutX="105.0" layoutY="230.0" prefHeight="17.0" prefWidth="379.0" textFill="RED" />
       <Label fx:id="lblAddress" layoutX="105.0" layoutY="310.0" prefHeight="17.0" prefWidth="379.0" textFill="RED" />
-      <Label fx:id="lblMobile" layoutX="605.0" layoutY="150.0" prefHeight="17.0" prefWidth="379.0" textFill="RED" />
-      <Label fx:id="lblRole" layoutX="605.0" layoutY="230.0" prefHeight="17.0" prefWidth="379.0" textFill="RED" />
+      <Label fx:id="lblMobile" layoutX="771.0" layoutY="150.0" prefHeight="17.0" prefWidth="379.0" textFill="RED" />
+      <Label fx:id="lblRole" layoutX="770.0" layoutY="230.0" prefHeight="17.0" prefWidth="379.0" textFill="RED" />
    </children>
 </Pane>

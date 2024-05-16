@@ -235,7 +235,7 @@ public class OrderPlaceFormController implements Initializable {
 
                 if (result.orElse(no) == yes) {
                     Map<String, Object> parameters = new HashMap<>();
-                    InputStream resource = this.getClass().getResourceAsStream("/view/reports/PlaceOrder.jrxml");
+                    InputStream resource = this.getClass().getResourceAsStream("/view/reports/GYM.jrxml");
                     try {
                         JasperReport jasperReport = JasperCompileManager.compileReport(resource);
                         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
