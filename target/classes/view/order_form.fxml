@@ -12,55 +12,51 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="930.0" prefWidth="1440.0" style="-fx-background-color: #E5E5E5; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.OrderPlaceFormController">
+<Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="930.0" prefWidth="1440.0" style="-fx-background-color: #212936; -fx-border-width: 0;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.OrderPlaceFormController">
    <children>
-      <Text layoutX="457.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop Manage" textAlignment="CENTER">
+      <Text fill="#ebeef4" layoutX="641.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop " textAlignment="CENTER" wrappingWidth="126.369140625">
          <font>
-            <Font name="System Bold" size="36.0" />
+            <Font name="System Bold" size="30.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Id:">
+      <Text fill="#869bc1" layoutX="51.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Id:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtOrderId" layoutX="51.0" layoutY="195.0" prefHeight="35.0" prefWidth="334.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font></TextField>
-      <Text layoutX="573.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name:">
+      <Text fill="#869bc1" layoutX="573.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliment ID:">
+      <Text fill="#869bc1" layoutX="51.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliment ID:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="573.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Date: ">
+      <Text fill="#869bc1" layoutX="573.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Date: ">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="51.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Id">
+      <Text fill="#869bc1" layoutX="51.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Id">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <JFXComboBox fx:id="cmbMemberId" layoutX="51.0" layoutY="287.0" onAction="#cmbMemberIdOnAction" prefHeight="35.0" prefWidth="334.0" style="-fx-background-color: white;" />
-      <JFXComboBox fx:id="cmbSupplementId" layoutX="51.0" layoutY="372.0" onAction="#cmbSupplementIdOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: white;" />
-      <Text layoutX="285.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+      <JFXComboBox fx:id="cmbMemberId" layoutX="49.0" layoutY="287.0" onAction="#cmbMemberIdOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #ebeef4;" />
+      <JFXComboBox fx:id="cmbSupplementId" layoutX="49.0" layoutY="372.0" onAction="#cmbSupplementIdOnAction" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #ebeef4;" />
+      <Text fill="#869bc1" layoutX="285.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="524.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:">
+      <Text fill="#869bc1" layoutX="524.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="740.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty On Hand:">
+      <Text fill="#869bc1" layoutX="740.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty On Hand:">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -69,12 +65,12 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text layoutX="979.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty :">
+      <Text fill="#869bc1" layoutX="979.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty :">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnAddToCart" alignment="CENTER" buttonType="RAISED" layoutX="1029.0" layoutY="425.0" onAction="#btnAddToCartOnAction" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #14213D;" text="Add to Cart" textFill="WHITE">
+      <JFXButton fx:id="btnAddToCart" alignment="CENTER" buttonType="RAISED" layoutX="1029.0" layoutY="425.0" onAction="#btnAddToCartOnAction" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #263348;" text="Add to Cart" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -96,40 +92,50 @@
             <TableColumn fx:id="colAction" prefWidth="199.0" text="Action" />
         </columns>
       </TableView>
-      <Text layoutX="76.0" layoutY="862.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Net Total : ">
+      <Text fill="#869bc1" layoutX="76.0" layoutY="862.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Net Total : ">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
       <TextField fx:id="txtTotal" layoutX="162.0" layoutY="845.0" />
-      <JFXButton fx:id="btnPlaceOrder" alignment="CENTER" buttonType="RAISED" layoutX="894.0" layoutY="844.0" onAction="#btnPlaceOrderOnAction" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: #14213D;" text="Place Order" textFill="WHITE">
+      <JFXButton fx:id="btnPlaceOrder" alignment="CENTER" buttonType="RAISED" layoutX="894.0" layoutY="844.0" onAction="#btnPlaceOrderOnAction" prefHeight="30.0" prefWidth="116.0" style="-fx-background-color: #263348;" text="Place Order" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lblOrderDate" layoutX="572.0" layoutY="195.0" prefHeight="35.0" prefWidth="150.0" textFill="#14213d">
+      <Label fx:id="lblOrderDate" layoutX="573.0" layoutY="195.0" prefHeight="35.0" prefWidth="150.0" textAlignment="CENTER" textFill="#ebeef4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblMemberName" layoutX="573.0" layoutY="287.0" prefHeight="35.0" prefWidth="335.0" textFill="#14213d">
+      <Label fx:id="lblMemberName" layoutX="573.0" layoutY="293.0" prefHeight="35.0" prefWidth="233.0" textFill="#ebeef4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblDescription" layoutX="285.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" textFill="#14213d">
+      <Label fx:id="lblDescription" layoutX="285.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" textFill="#ebeef4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblUnitPrice" layoutX="524.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" textFill="#14213d">
+      <Label fx:id="lblUnitPrice" layoutX="524.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" textFill="#ebeef4">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="lblQtyOnHand" layoutX="740.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" textFill="#14213d">
+      <Label fx:id="lblQtyOnHand" layoutX="740.0" layoutY="372.0" prefHeight="35.0" prefWidth="200.0" textFill="#ebeef4">
          <font>
             <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="50.0" layoutY="195.0" prefHeight="35.0" prefWidth="149.0" textFill="#ebeef4">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="51.0" layoutY="25.0" prefHeight="35.0" prefWidth="200.0" text="Add your orders" textFill="#ebeef4">
+         <font>
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
    </children>

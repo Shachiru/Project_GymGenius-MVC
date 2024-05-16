@@ -101,10 +101,17 @@
          </children>
       </Pane>
       <Pane id="pagingPane" fx:id="pagingPane" layoutX="240.0" layoutY="120.0" prefHeight="930.0" prefWidth="1440.0" style="-fx-border-image-width: 0;" styleClass="pagingPane" stylesheets="@../values/style.css" />
-      <JFXButton fx:id="btnLogout" buttonType="RAISED" layoutX="37.0" layoutY="761.0" onAction="#btnLogoutOnAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #263348;" text="Log Out" textFill="#ebeef4">
+      <JFXButton fx:id="btnLogout" buttonType="RAISED" layoutX="45.0" layoutY="912.0" onAction="#btnLogoutOnAction" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #263348;" text="Log Out" textFill="#ebeef4">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../asserts/icons/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </JFXButton>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#263348" height="120.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1680.0" />
       <Line endX="38.0" endY="872.0" layoutX="202.0" layoutY="178.0" startX="38.0" startY="-178.0" stroke="#263348" strokeWidth="5.0" />

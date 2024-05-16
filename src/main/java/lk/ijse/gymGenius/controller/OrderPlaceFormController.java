@@ -77,7 +77,7 @@ public class OrderPlaceFormController implements Initializable {
     private Label lblOrderDate;
 
     @FXML
-    private TextField txtOrderId;
+    private Label lblOrderId;
 
     @FXML
     private TextField txtQty;
@@ -97,7 +97,7 @@ public class OrderPlaceFormController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            txtOrderId.setText(OrderRepo.generateNextId());
+            lblOrderId.setText(OrderRepo.generateNextId());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -204,7 +204,7 @@ public class OrderPlaceFormController implements Initializable {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
-        String orderId = txtOrderId.getText();
+        String orderId = lblOrderId.getText();
         Date date = Date.valueOf(lblOrderDate.getText());
         String memberId = cmbMemberId.getValue();
 
