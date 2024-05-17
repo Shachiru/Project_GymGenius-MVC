@@ -242,26 +242,32 @@ public class OrderPlaceFormController implements Initializable {
                 Optional<ButtonType> result = new Alert(Alert.AlertType.CONFIRMATION, "Order Successfully.. Do you want print a bill ?", yes, no).showAndWait();
 
                 if (result.orElse(no) == yes) {
-                    Map<String, Object> parameters = new HashMap<>();
-                   InputStream resource = this.getClass().getResourceAsStream("/view/reports/NewBill.jrxml");
+                    JasperDesign jasperDesign =
+                            JRXmlLoader.load("src/main/resources/view/reports/GymBill.jrxml");
 
-                    try {
-                        JasperReport jasperReport = JasperCompileManager.compileReport(resource);
-                        JRDesignQuery query = new JRDesignQuery();
-                        query.setText("SELECT * FROM orders o INNER JOIN order_detail od ON o.o_id = od.order_id WHERE o.o_id = (SELECT MAX(o.o_id) FROM orders) ORDER BY od.order_id DESC LIMIT 1");
+                    JRDesignQuery jrDesignQuery = new JRDesignQuery();
+                    jrDesignQuery.setText("SELECT * FROM orders o INNER JOIN order_detail od ON o.o_id = od.order_id WHERE o.o_id = (SELECT MAX(o.o_id) FROM orders) ORDER BY od.order_id DESC LIMIT 1");
 
+                    jasperDesign.setQuery(jrDesignQuery);
 
-                        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-                        JasperViewer.viewReport(jasperPrint, false);
-                    } catch (JRException e) {
-                        throw new RuntimeException(e);
-                    }
+                    JasperReport jasperReport =
+                            JasperCompileManager.compileReport(jasperDesign);
+
+                    JasperPrint jasperPrint =
+                            JasperFillManager.fillReport(
+                                    jasperReport,
+                                    null,
+                                    DbConnection.getInstance().getConnection());
+
+                    JasperViewer.viewReport(jasperPrint,false);
                 }
             } else {
                 new Alert(Alert.AlertType.WARNING, "Something went Wrong").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (JRException e) {
+            throw new RuntimeException(e);
         }
     }
 
