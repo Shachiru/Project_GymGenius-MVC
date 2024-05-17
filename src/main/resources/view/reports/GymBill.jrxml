@@ -4,12 +4,10 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (3)"/>
 	<queryString language="SQL">
-		<![CDATA[select *
-FROM orders o        
-INNER JOIN order_detail od
-ON o_id = od.order_id         
-WHERE o.o_id=(select max(o.o_id ) FROM orders)
-ORDER BY od.order_id desc;]]>
+		<![CDATA[SELECT * FROM orders o INNER JOIN 
+order_detail od ON o.o_id = od.order_id
+ WHERE o.o_id = (SELECT MAX(o.o_id) FROM orders)
+  ORDER BY od.order_id DESC LIMIT 1]]>
 	</queryString>
 	<field name="o_id" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="o_id"/>
@@ -25,6 +23,11 @@ ORDER BY od.order_id desc;]]>
 		<property name="com.jaspersoft.studio.field.name" value="m_id"/>
 		<property name="com.jaspersoft.studio.field.label" value="m_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="order_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="order_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="order_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="order_detail"/>
 	</field>
 	<field name="sup_id" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="sup_id"/>

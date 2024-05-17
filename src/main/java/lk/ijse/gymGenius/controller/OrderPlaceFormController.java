@@ -9,8 +9,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import lk.ijse.gymGenius.db.DbConnection;
 import lk.ijse.gymGenius.model.*;
 import lk.ijse.gymGenius.repository.MemberRepo;
 import lk.ijse.gymGenius.repository.OrderRepo;
@@ -18,16 +21,21 @@ import lk.ijse.gymGenius.repository.PlaceOrderRepo;
 import lk.ijse.gymGenius.repository.SupplementRepo;
 import lk.ijse.gymGenius.tm.OrderTm;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.swing.JRViewer;
 import net.sf.jasperreports.view.JasperViewer;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.List;
 
 public class OrderPlaceFormController implements Initializable {
 
@@ -235,9 +243,14 @@ public class OrderPlaceFormController implements Initializable {
 
                 if (result.orElse(no) == yes) {
                     Map<String, Object> parameters = new HashMap<>();
-                    InputStream resource = this.getClass().getResourceAsStream("/view/reports/GymBill.jrxml");
+                   InputStream resource = this.getClass().getResourceAsStream("/view/reports/NewBill.jrxml");
+
                     try {
                         JasperReport jasperReport = JasperCompileManager.compileReport(resource);
+                        JRDesignQuery query = new JRDesignQuery();
+                        query.setText("SELECT * FROM orders o INNER JOIN order_detail od ON o.o_id = od.order_id WHERE o.o_id = (SELECT MAX(o.o_id) FROM orders) ORDER BY od.order_id DESC LIMIT 1");
+
+
                         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
                         JasperViewer.viewReport(jasperPrint, false);
                     } catch (JRException e) {
