@@ -7,11 +7,6 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
-.lblWelcome{
-    -fx-text-fill: #E6180D;
-    -fx-font-weight: bold;
-    -fx-font-size: 42px;
-}
 .txtUsername{
     -fx-font-size: 16px;
     -fx-text-fill: black;

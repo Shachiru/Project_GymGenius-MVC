@@ -6,11 +6,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="rootNode" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.LoginFormController">
    <children>
@@ -20,20 +22,15 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="737.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
-      <Label id="lblWelcome" fx:id="lblWelcome" alignment="CENTER" layoutX="87.0" layoutY="76.0" prefHeight="94.0" prefWidth="530.0" styleClass="lblWelcome" stylesheets="@../values/style.css" text="Welcome to GYM genius" textFill="#f8f8f8">
-         <font>
-            <Font name="Arial Bold" size="67.0" />
-         </font>
-      </Label>
       <JFXButton id="loginbtn" fx:id="btnLogin" buttonType="RAISED" layoutX="885.0" layoutY="558.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-background-color: #869BC1;" styleClass="loginbtn" stylesheets="@../values/style.css" text="Login">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXButton>
-      <Label id="lblUsername" fx:id="lblUsername" layoutX="804.0" layoutY="306.0" styleClass="lblUsername" stylesheets="@../values/style.css" text="Username" textFill="WHITE">
+      <Label id="lblUsername" fx:id="lblUsername" layoutX="804.0" layoutY="317.0" styleClass="lblUsername" stylesheets="@../values/style.css" text="Username" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label id="lblPassword" fx:id="lblPassword" layoutX="806.0" layoutY="423.0" styleClass="lblPassword" stylesheets="@../values/style.css" text="Password" textFill="WHITE">
+      <Label id="lblPassword" fx:id="lblPassword" layoutX="804.0" layoutY="429.0" styleClass="lblPassword" stylesheets="@../values/style.css" text="Password" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font></Label>
@@ -47,10 +44,18 @@
          </font>
       </TextField>
       <PasswordField id="txtPw" fx:id="txtPw" layoutX="804.0" layoutY="458.0" prefHeight="46.0" prefWidth="308.0" promptText="Password" style="-fx-background-color: E5E5E5;" styleClass="txtPw" stylesheets="@../values/style.css" />
-      <ImageView fitHeight="280.0" fitWidth="280.0" layoutX="818.0" layoutY="14.0">
+      <ImageView blendMode="SCREEN" fitHeight="348.0" fitWidth="355.0" layoutX="782.0" layoutY="-21.0">
          <image>
             <Image url="@../asserts/logo/GymGeniusLOGO.png" />
          </image>
       </ImageView>
+      <Text fill="#e6180d" layoutX="116.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to GYM GENIUS" wrappingWidth="406.38739013671875">
+         <font>
+            <Font name="System Bold" size="67.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Text>
    </children>
 </AnchorPane>
