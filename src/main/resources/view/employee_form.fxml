@@ -13,7 +13,7 @@
 
 <Pane fx:id="pagingPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="930.0" prefWidth="1440.0" style="-fx-background-color: #212936;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gymGenius.controller.EmployeeFormController">
    <children>
-      <Text fill="#ebeef4" layoutX="531.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Manage" textAlignment="CENTER" wrappingWidth="379.0">
+      <Text fill="#ebeef4" layoutX="532.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Manage" textAlignment="CENTER" wrappingWidth="379.0">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>
@@ -26,7 +26,7 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <TextField fx:id="txtEmpAddress" layoutX="105.0" layoutY="301.0" prefHeight="35.0" prefWidth="379.0">
+      <TextField fx:id="txtEmpAddress" layoutX="105.0" layoutY="302.0" prefHeight="35.0" prefWidth="379.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
@@ -34,36 +34,36 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <TextField fx:id="txtEmpRole" layoutX="772.0" layoutY="225.0" prefHeight="35.0" prefWidth="379.0">
+      <TextField fx:id="txtEmpRole" layoutX="772.0" layoutY="216.0" prefHeight="35.0" prefWidth="379.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></TextField>
-      <Text fill="#869bc1" layoutX="107.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID">
+      <Text fill="#869bc1" layoutX="107.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text fill="#869bc1" layoutX="110.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <Text fill="#869bc1" layoutX="110.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text fill="#869bc1" layoutX="110.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+      <Text fill="#869bc1" layoutX="110.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text fill="#869bc1" layoutX="775.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile No">
+      <Text fill="#869bc1" layoutX="775.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile No">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <Text fill="#869bc1" layoutX="775.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
+      <Text fill="#869bc1" layoutX="775.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="tblEmployee" layoutX="218.0" layoutY="439.0" onMouseClicked="#empTableClick" prefHeight="450.0" prefWidth="1000.0">
+      <TableView fx:id="tblEmployee" layoutX="220.0" layoutY="439.0" onMouseClicked="#empTableClick" prefHeight="450.0" prefWidth="1000.0">
         <columns>
           <TableColumn fx:id="colEmpId" prefWidth="150.0" text="ID" />
           <TableColumn fx:id="colEmpName" prefWidth="200.0" text="Name" />
@@ -84,7 +84,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="721.0" layoutY="375.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Delete " textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="721.0" layoutY="375.0" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Delete  " textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -96,7 +96,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="901.0" layoutY="375.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Update " textFill="WHITE">
+      <JFXButton buttonType="RAISED" contentDisplay="RIGHT" layoutX="901.0" layoutY="375.0" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #263348;" text="Update  " textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

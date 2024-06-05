@@ -21,7 +21,8 @@
             <Image url="@../asserts/images/LoginPageBackground.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="737.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="737.0" layoutX="-1.0" layoutY="-2.0" opacity="0.55" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#263348" height="593.0" layoutX="755.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="424.0" />
       <JFXButton id="loginbtn" fx:id="btnLogin" buttonType="RAISED" layoutX="885.0" layoutY="558.0" onAction="#btnLoginOnAction" prefHeight="46.0" prefWidth="159.0" style="-fx-background-radius: 30; -fx-background-color: #869BC1;" styleClass="loginbtn" stylesheets="@../values/style.css" text="Login">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -44,11 +45,6 @@
          </font>
       </TextField>
       <PasswordField id="txtPw" fx:id="txtPw" layoutX="804.0" layoutY="458.0" prefHeight="46.0" prefWidth="308.0" promptText="Password" style="-fx-background-color: E5E5E5;" styleClass="txtPw" stylesheets="@../values/style.css" />
-      <ImageView blendMode="SCREEN" fitHeight="348.0" fitWidth="355.0" layoutX="782.0" layoutY="-21.0">
-         <image>
-            <Image url="@../asserts/logo/GymGeniusLOGO.png" />
-         </image>
-      </ImageView>
       <Text fill="#e6180d" layoutX="116.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to GYM GENIUS" wrappingWidth="406.38739013671875">
          <font>
             <Font name="System Bold" size="67.0" />
@@ -57,5 +53,10 @@
             <DropShadow />
          </effect>
       </Text>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="867.0" layoutY="92.0">
+         <image>
+            <Image url="@../asserts/logo/Gym%20Genius.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

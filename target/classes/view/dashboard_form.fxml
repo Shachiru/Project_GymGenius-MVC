@@ -115,11 +115,6 @@
       </JFXButton>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#263348" height="120.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1680.0" />
       <Line endX="38.0" endY="872.0" layoutX="202.0" layoutY="178.0" startX="38.0" startY="-178.0" stroke="#263348" strokeWidth="5.0" />
-      <ImageView fitHeight="120.0" fitWidth="150.0" layoutX="37.0">
-         <image>
-            <Image url="@../asserts/logo/GymGeniusLOGO.png" />
-         </image>
-      </ImageView>
       <Text fill="#e6180d" layoutX="266.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STRONGER EVERY DAY">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -140,5 +135,10 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="60.0">
+         <image>
+            <Image url="@../asserts/logo/Gym%20Genius.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
